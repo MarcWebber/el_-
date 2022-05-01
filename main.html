@@ -6,119 +6,34 @@
           content="width=device-width,user-scalable=0,initial-scale=1.0,
           minimum-scale=1.0, maximum-scale=1.0">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="resources/scripts/bin.js"></script>
+    <script>
+        var window_width = $(window).width();//获取屏幕高度
+        var window_height = $(window).height();
+        // new_alert();
+    </script>
+    <link rel="stylesheet" href="resources/css/head_style.css">
+    <link rel="stylesheet" href="resources/css/footer_style.css">
+    <link rel="stylesheet" href="resources/css/banner_style.css">
+    <link rel="stylesheet" href="resources/css/section_style.css">
+
     <title>主页</title>
-    <!--    头部样式        -->
-    <style class="head_style">
-        * {
-            margin: 0;
-            padding: 0;
-        }
 
-        header {
-            position: -webkit-sticky;
-            background-color: #0093E9;
-            background-image: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
-            height: 14vh;
-        }
-
-        header .header-top {
-            position: absolute;
-            width: 100vw;
-            height: 6vh;
-        }
-
-        header .header-top * {
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-        }
-
-        .search {
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .search input {
-            border-radius: 8px;
-            border: 1px dashed wheat;
-            line-height: 180%;
-            font-size: 100%;
-            transform: translate(-50%, -50%);
-            text-indent: 2em;
-        }
-
-        header .header-image {
-            left: 0;
-            transform: translate(50%, -50%);
-        }
-
-        header .plus {
-            right: 0;
-            transform: translate(-50%, -50%);
-        }
-    </style>
-    <!--    头部导航样式      -->
-    <style class="">
-        header .header-navi div {
-            display: inline-block;
-            width: 15vw;
-            height: 15vw;
-            transform: translateY(8vh);
-            text-align: center;
-        }
-    </style>
-    <style class="banner_btn">
-        #btn_list li {
-            background-color: #0093E9;
-            background-image: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
-            width: 10vw;
-            opacity: 0;
-        );
-        }
-    </style>
-<!--    轮播图样式       -->
-    <style class="banner_img">
-        #img_container {
-            width: 80vw;
-            height: 15vh;
-            position: relative;
-            top: 10vh;
-            left: 50vw;
-            transform: translate(-50%, -50%);
-            overflow: hidden;
-        }
-
-        #img_container span {
-            /*border: red 1px solid;*/
-            position: absolute;
-            /*float: left; !*把所有图片放在同一个位置*!*/
-            height: 15vh;
-            width: 80vw;
-            top:0;
-            left: 0;
-            /*transition-duration: 0.5s; !*设置过渡时间*!*/
-            opacity: 0; /*把所有图片变透明*/
-        }
-        #img_container .on{
-            opacity: 1 !important;
-        }
-
-    </style>
 </head>
 <body class="el-main-page">
 <!--头部开始-->
 <header>
     <div class="header-top">
         <div class="header-image">
-            <img src="sources/images/热火.jfif" alt="LOGO">
+            <img src="resources/images/热火.jfif" alt="LOGO">
         </div>
 
         <div class="search">
             <input type="text" placeholder="搜索">
-            <img src="sources/images/放大镜.png" alt="放大镜">
+            <img src="resources/images/放大镜.png" alt="放大镜">
         </div>
         <div class="plus">
-            <img src="sources/images/plus.png" alt="plus">
+            <img src="resources/images/plus.png" alt="plus">
         </div>
 
     </div>
@@ -179,59 +94,66 @@
     </ul>
     <ul></ul>
 </div>
-<!--轮播图结束-->
-</body>
-<script>
-    var window_width = $(window).width();//获取屏幕高度
-    var window_height = $(window).height();
-    //设置一下输入框格式
-    let setInputBox = function () {
-        let input = $(".search input");
-        let len_width = $(input).height();
-        let search_img = $(".search img");
-        $(input).width($(window).width() / 2);
-        search_img.height(len_width).width(len_width);
-        let search_img_offset = $(search_img).offset();
-        search_img.offset({
-            top: search_img_offset.top - $(input).height() / 2,
-            left: search_img_offset.left + $(input).width() / 2.8
-        })
-    }
-    //增添一个放大镜点击效果
-    $('.search img').on('click', function () {
-        alert("这个功能暂时还没有");
-    })
-    let setHeaderImg = function (img_block, img_name, num) {
-        let len_width = $(".search input").height();
-        img_name.height(len_width * 2).width(len_width * 2);
-        let img_offset = $(img_name).offset();
-        img_name.offset({top: img_offset.top - len_width, left: img_offset.left - len_width * num})
-    }
-    /**
-     * 这是个BUG
-     */
-    // $(".plus img").on("click",function (){
-    //         $(".plus img").rotate(20);
-    // });
-    setInputBox();
-    setHeaderImg($(".plus"), $(".plus img"), 2);
-    setHeaderImg($(".header-image"), $(".header-image img"), -0.5)
-    //    调正放大镜大小
 
-</script>
+<section>
+
+</section>
+<!--轮播图结束-->
+<footer>
+    <div class="footer-navi">
+        <div id="footer_navi1">
+            <p class="navi_line1">
+                <img src="" alt="导航图1">
+            </p>
+            <p class="navi_line2">
+                <span class="header-text">活动</span>
+            </p>
+        </div>
+
+        <div id=footer_navi2">
+            <p class="navi_line1">
+                <img src="" alt="导航图2">
+            </p>
+            <p class="navi_line2">
+                <span class="header-text">讲座</span>
+            </p>
+        </div>
+
+        <div id="footer_navi3">
+            <p class="navi_line1">
+                <img src="" alt="导航图3">
+            </p>
+            <p class="navi_line2">
+                <span class="header-text">新闻</span>
+            </p>
+        </div>
+
+        <div id="footer_navi4">
+            <p class="navi_line1">
+                <img src="" alt="导航图4">
+            </p>
+            <p class="navi_line2">
+                <span class="header-text">我的</span>
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+
+<script type="text/javascript" src="resources/scripts/header_script.js"></script>
 
 <script>//轮播图js
-let current_index=0;//当前显示的图片
-let target_index=0;
+let current_index = 0;//当前显示的图片
+let target_index = 0;
 let img_list = $("#img_container span");
-let timer=null;
+let timer = null;
 let load_img = function () {
     //通过ajax获取图片信息后将图片标签加入到img_list,,
     // let images=... 请求图片资源，获取其url,以数组的形式存储
     // let img_location=... 请求图片源地址，获取其location,以数组的形式存储
-    img_list[0].style.cssText="background: url(sources/images/plus.png);background-size:cover";
-    img_list[1].style.cssText="background: url(sources/images/放大镜.png);background-size:cover";
-    img_list[2].style.cssText="background: url(sources/images/放大镜.png);background-size:cover";
+    img_list[0].style.cssText = "background: url(resources/images/plus.png);background-size:cover";
+    img_list[1].style.cssText = "background: url(resources/images/热火.jfif);background-size:cover";
+    img_list[2].style.cssText = "background: url(resources/images/放大镜.png);background-size:cover";
 
     // img_list[1].src = 'sources/images/热火.jfif';
     // img_list[0].width=window_width;
@@ -250,19 +172,18 @@ let load_img = function () {
     //     //     "border-radius":"20px"
     //     // })
     // }
-    alert("沈扬牛逼!")
 }
 
 load_img();
 
 //轮播函数
-function slide(){
-    target_index=current_index+1;
+function slide() {
+    target_index = current_index + 1;
     current_index = target_index % img_list.length; // 获取当前index
-    for (let x of img_list){
-        x.className=" ";
+    for (let x of img_list) {
+        x.className = " ";
     } // 设置其他图片隐藏
-    img_list[current_index] .className = "on"; // 设置当前index图片显示
+    img_list[current_index].className = "on"; // 设置当前index图片显示
     // btnList.forEach(v => v.className = "unitBtn") // 设置其他按钮为灰色
     // btnList[curIndex] .className = "unitBtn btnActive"; // 设置当前按钮为蓝色
 }
@@ -293,22 +214,13 @@ function slide(){
 //     });
 //     eventDispose(carousel,config); // 对一些浏览器事件处理
 //     // createBtnGroup(carousel,config); // 按钮组的处理
-    timer = setInterval(() => {slide()},500); // 设置定时器定时切换
+timer = setInterval(() => {
+    slide()
+}, 2000); // 设置定时器定时切换
 // })();
 
 
-
 // alert("还说呢杨")
-</script>
-
-
-<script>
-    let header_navigators = $(".header-navi div");
-    for (let i = 0; i < 4; i++) {
-        // alert("no")
-        let nav = $(header_navigators[i]);
-        $(nav).offset({left: (i * 0.25 + 0.125) * window_width - nav.width() / 2});
-    }
 </script>
 
 </html>
