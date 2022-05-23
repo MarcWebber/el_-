@@ -1,6 +1,4 @@
 // import https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js
-
-alert("nnn....")
 var window_width = $(window).width();//获取屏幕高度
 var window_height = $(window).height();
 //设置一下输入框格式

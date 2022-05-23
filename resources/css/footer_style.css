@@ -15,3 +15,7 @@ footer .footer-navi div {
     transform: translate(30%,3vh);
     text-align: center;
 }
+
+footer .footer-navi span{
+    color: white;
+}
