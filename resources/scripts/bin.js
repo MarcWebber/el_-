@@ -1,3 +1,4 @@
+"use strict"
 var window_width = $(window).width();//获取屏幕高度
 var window_height = $(window).height();
 var new_alert = function () {
@@ -17,8 +18,8 @@ var new_alert = function () {
             "top": "15%",
             "width": "100px",
             "margin": "0 auto",
-            "background-color": "#0093E9";
-            "background-image": "linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)";
+            "background-color": "#0093E9",
+            "background-image": "linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)",
 
             "font-size": "20px",
             // "font-family":"Arial" "楷体";
@@ -58,7 +59,7 @@ var new_alert = function () {
  *
  */
 
-var navigatorSetUp = function (x:String) {
+var navigatorSetUp = function (x) {
     let header_navigators = $(x);
     for (let i = 0; i < 4; i++) {
         let nav = $(header_navigators[i]);
@@ -67,3 +68,4 @@ var navigatorSetUp = function (x:String) {
 }
 navigatorSetUp(".header-navi div");
 navigatorSetUp(".footer-navi div");
+

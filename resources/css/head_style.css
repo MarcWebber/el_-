@@ -53,3 +53,7 @@ header .header-navi div {
     transform: translate(30%,8vh);
     text-align: center;
 }
+
+.header-navi p:nth-child(odd){
+    border: dashed 1px white;
+}
