@@ -10,15 +10,15 @@ import java.util.Arrays;
  * Created with Intellij IDEA
  *
  * @ Author: MarcWebber
- * @ Date: 2022/5/25
+ * @ Date: 2022/5/28
  * @ Description:
  * Life is short, I use Java
  */
-public final class SoftwareEngineering implements MyJsoup,Department{
+public final class ComputerScience implements MyJsoup,Department{
     private Info[] news;                // the news information
     private Info[] lectures;            // the lecture information
     private String[] urls;              // to store the urls that the class need to search
-    static final String departmentName="SoftwareEngineeringUrl";
+    static final String departmentName="ComputerScienceUrl";
 
     public String[] setUrls(){
         this.urls=setUrls(this.departmentName);
@@ -48,4 +48,5 @@ public final class SoftwareEngineering implements MyJsoup,Department{
     public void finalize() throws Throwable {
         super.finalize();
     }
+
 }

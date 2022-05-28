@@ -18,7 +18,7 @@ import java.util.Optional;
  information map to the other columns in the database
  need to be transformed
  */
-public class Info {
+public final class Info {
     private String primaryKey;
     private List<Optional<Object>> information;
 }

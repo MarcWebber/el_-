@@ -1,5 +1,8 @@
 package Jsoup;
 
+import Jsoup.Departments.Department;
+import Main.MyException.MethodToBeCompletedException;
+
 /**
  * Created with Intellij IDEA
  *
@@ -8,5 +11,8 @@ package Jsoup;
  * @ Description:
  * Life is short, I use Java
  */
-public class InformationTranslator {
+public final class InformationTranslator {
+    public Info translateInformation(Department dept) throws MethodToBeCompletedException{
+        throw new MethodToBeCompletedException();
+    }
 }

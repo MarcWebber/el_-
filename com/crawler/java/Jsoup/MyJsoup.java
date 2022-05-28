@@ -38,10 +38,11 @@ public interface MyJsoup {
                 System.out.println("connection failure!");
                 ioe.printStackTrace();
             }
-
-            Elements elementAll=document.getAllElements();
+            // unused
+            // Elements elementAll=document.getAllElements();
             // this should be simplified, and maybe need to be deleted
             Elements elementNews=document.getElementsByTag("li");
+            System.err.println("this code is executed!");
             for (Element element:elementNews){
                 System.out.println(element.text());
             }

@@ -23,14 +23,8 @@ public class Parser {
 
     public static String[] getUrls(String departmentName){
         String[] urls;
-//        FileInputStream in=null;
         InputStream in=Parser.class.getClassLoader().getResourceAsStream("CrawlerConfig.properties");
-//        try {
-//            in=new FileInputStream("/resources/CrawlerConfig.properties");
-//        }catch (FileNotFoundException e){
-//            e.printStackTrace();
-//        }
-
+        webProperties=new Properties();
         try {
             webProperties.load(in);
         }catch (IOException ioe){

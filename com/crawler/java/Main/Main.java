@@ -1,6 +1,9 @@
 package Main;
 
 import Jsoup.Departments.*;
+import Jsoup.Utils.DepartmentExecutor;
+import Jsoup.Utils.Exceptions.InfoFetchFailureException;
+import Jsoup.Utils.Exceptions.UrlsGetFailureException;
 
 /**
  * Created with Intellij IDEA
@@ -18,8 +21,10 @@ public class Main {
 
      to get the selected department, read from the resources
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InfoFetchFailureException, UrlsGetFailureException {
         SoftwareEngineering softwareEngineering=new SoftwareEngineering();
-        softwareEngineering.getInfo();
+        ComputerScience computerScience=new ComputerScience();
+        DepartmentExecutor departmentExecutor=new DepartmentExecutor();
+        departmentExecutor.exec(computerScience);
     }
 }
