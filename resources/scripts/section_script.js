@@ -46,10 +46,10 @@ class Section {
             "                </div>";
         // console.log("father=",father);
         $(father).append(newhtml);
-        console.log(newhtml)
         // $(father)[0].innerHTML(newhtml);
         this.setFont();
     }
+
 
     // let father = selectFatherSection("section_left");
     // appendTag(father[0], null, null, null);

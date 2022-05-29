@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="resources/css/footer_style.css">
     <link rel="stylesheet" href="resources/css/banner_style.css">
     <link rel="stylesheet" href="resources/css/section_style.css">
+    <link rel="stylesheet" href="resources/css/constant_present.css">
 
     <title>主页</title>
 
@@ -87,7 +88,7 @@
 </header>
 <!--头部结束-->
 
-<div class="container">
+<div id="container">
 
 </div>
 
@@ -144,4 +145,39 @@
 <script type="text/javascript" src="resources/scripts/header_script.js"></script>
 
 <script src="resources/scripts/section_script.js"></script>
+
+<script>
+    function AppendHrefToContainer(title, text, time, href){
+        var container = document.getElementById("container")
+        var newhref = document.createElement("a")
+        newhref.setAttribute("class", "pure_link")
+        var new_title = document.createElement("p")
+        new_title.setAttribute("class", "new_title")
+        var title_txt = document.createTextNode(title)
+        newhref.setAttribute("href", href)
+        newhref.setAttribute("target", "_blank")
+        new_title.appendChild(title_txt)
+        newhref.appendChild(new_title)
+        container.appendChild(newhref)
+
+        var new_txt = document.createElement("p")
+        new_txt.setAttribute("class", "new_text")
+        var text_txt = document.createTextNode(text)
+        new_txt.appendChild(text_txt)
+        newhref.appendChild(new_txt)
+
+        var new_time = document.createElement("p")
+        new_time.setAttribute("class", "new_time")
+        var time_txt = document.createTextNode(time)
+        new_time.appendChild(time_txt)
+        newhref.appendChild(new_time)
+
+        var line_sep = document.createElement("hr")
+        line_sep.setAttribute("class", "new_hr")
+        container.appendChild(line_sep)
+        
+    }
+    AppendHrefToContainer("测试4", "这里放了一个测试网址", "1145-1-4", "https://software.nju.edu.cn/")
+
+</script>
 </html>
