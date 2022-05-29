@@ -46,14 +46,27 @@ header .plus {
     transform: translate(-50%, -50%);
 }
 
-header .header-navi div {
+header .header-navi div{
     display: inline-block;
     width: 20vw;
     height: 15vw;
     transform: translate(30%,8vh);
     text-align: center;
+    top: 6vh;
 }
 
 .header-navi p:nth-child(odd){
     border: dashed 1px white;
+}
+
+.header_href a{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.header-text{
+
+    border-bottom: 0vw ;
+    color: white;
 }

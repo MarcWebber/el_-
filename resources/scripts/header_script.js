@@ -34,4 +34,3 @@ setInputBox();
 setHeaderImg($(".plus"), $(".plus img"), 2);
 setHeaderImg($(".header-image"), $(".header-image img"), -0.5)
 //    调正放大镜大小
-//
