@@ -1,7 +1,11 @@
 package Jsoup.Departments;
 
 import Jsoup.Info;
+import Jsoup.InformationTranslator;
 import Jsoup.MyJsoup;
+import Jsoup.Utils.DepartmentExecutor;
+import Jsoup.Utils.Exceptions.InfoFetchFailureException;
+import Jsoup.Utils.Exceptions.UrlsGetFailureException;
 import Main.MyException.MethodToBeCompletedException;
 import org.jsoup.nodes.Document;
 
@@ -18,8 +22,8 @@ import java.util.Arrays;
 public final class SoftwareEngineering implements MyJsoup, Department {
 
 
-    static Info[] news;                // the news information
-    static Info[] lectures;            // the lecture information
+    public static Info[] news;                // the news information
+    public static Info[] lectures;            // the lecture information
     static String[] urls;              // to store the urls that the class need to search
     static final String departmentName = "SoftwareEngineeringUrl";
     public String[] setUrls() {
@@ -28,6 +32,11 @@ public final class SoftwareEngineering implements MyJsoup, Department {
     }
     public Info[] getNews() {
         return news;
+    }
+
+    @Override
+    public void setLectures() {
+
     }
 
     public static void setNews(Info[] news) {
@@ -43,7 +52,7 @@ public final class SoftwareEngineering implements MyJsoup, Department {
     }
 
 
-    public Info getInfo() {
+    public Info[] getInfo() {
         this.setUrls();
         Document[] doc = new Document[1];
         Arrays.stream(urls).
@@ -52,6 +61,11 @@ public final class SoftwareEngineering implements MyJsoup, Department {
                     doc[0] =getByDocument(s, null);
                 });
         return null;
+    }
+
+    @Override
+    public void setNews() {
+
     }
 
     @Override
@@ -69,9 +83,14 @@ public final class SoftwareEngineering implements MyJsoup, Department {
     public void finalize() throws Throwable {
         super.finalize();
     }
-    public SoftwareEngineering(){
-        setNews(getNews());
-        setLectures(getLectures());
-
+    public SoftwareEngineering() throws InfoFetchFailureException, UrlsGetFailureException {
+        //to exec the basic command needed to construct a department
+        //but i don't think this kind of code is clean and reliable
+        DepartmentExecutor.exec(this);
+        //to set the news got from the websites
+//        setNews(getInfo());
+//        setNews(InformationTranslator.translateInformation(this));
+//        setLectures(getInfo());
+//        setLectures(InformationTranslator.translateInformation(this));
     }
 }

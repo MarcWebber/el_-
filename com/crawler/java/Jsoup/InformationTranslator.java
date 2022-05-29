@@ -12,7 +12,9 @@ import Main.MyException.MethodToBeCompletedException;
  * Life is short, I use Java
  */
 public final class InformationTranslator {
-    public Info translateInformation(Department dept) throws MethodToBeCompletedException{
-        dept.getInfo()
+    //
+    public static Info[] translateInformation(Department dept) throws MethodToBeCompletedException{
+//        dept.getInfo()
+        return null;
     }
 }

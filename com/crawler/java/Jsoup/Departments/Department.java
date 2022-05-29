@@ -18,7 +18,7 @@ public interface Department {
     //set the urls that needed to be searched in a certain department
     String[] setUrls();
     //get Info is used to get the related information
-    Info getInfo();
+    Info[] getInfo();
     void setNews();
     Info[] getNews();
     void setLectures();

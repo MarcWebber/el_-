@@ -21,22 +21,42 @@ import java.util.stream.Collector;
  need to be transformed
  */
 public final class Info {
-    //    private String primaryKey;
-//    private List<Optional<Object>> information;
-    Map<Integer, List<String>> infoList;
+        private String primaryKey;
+        private List<?> information;
 
-    public void set(Document document) {
-        String[] text = document.text().split(" ");
-        List<String> stringList = null;
-        for (int i=1;i<text.length;i++){
-            stringList.add(text[i]);
+        public void setPrimaryKey(String primaryKey) {
+                this.primaryKey = primaryKey;
         }
-        this.infoList.put(Integer.getInteger(text[0]),
-                stringList);
-    }
 
-    public Info get(){
-        return this.infoList;
-    }
+        public void setInformation(List<?> information) {
+                this.information = information;
+        }
+
+        public String getPrimaryKey() {
+                return primaryKey;
+        }
+
+        public List<?> getInformation() {
+                return information;
+        }
+
+//        pubString toString(Optional<Object> obj){
+//                return String.valueOf(obj);
+//        }
+        //    Map<Integer, List<String>> infoList;
+//
+//    public void set(Document document) {
+//        String[] text = document.text().split(" ");
+//        List<String> stringList = null;
+//        for (int i=1;i<text.length;i++){
+//            stringList.add(text[i]);
+//        }
+//        this.infoList.put(Integer.getInteger(text[0]),
+//                stringList);
+//    }
+//
+//    public Info get(){
+//        return this.infoList;
+//    }
 }
 

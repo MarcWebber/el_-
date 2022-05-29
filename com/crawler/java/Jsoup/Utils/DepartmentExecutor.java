@@ -20,8 +20,8 @@ import java.util.List;
  provide the getLastError function so that you can get the error if you want to debug
  */
 public class DepartmentExecutor {
-    List<String> errors;
-    public String exec(Department dept) throws InfoFetchFailureException, UrlsGetFailureException {
+    static List<String> errors;
+    public static String exec(Department dept) throws InfoFetchFailureException, UrlsGetFailureException {
         if (dept.setUrls()==null){
             errors.add("UrlsGetFailureException");
             throw new UrlsGetFailureException();
@@ -31,12 +31,15 @@ public class DepartmentExecutor {
             throw new InfoFetchFailureException();
         }
         errors.add("Success!");
-        return this.getLastError();
+        return getLastError();
     }
 
     //get error in execution
-    public String getLastError(){
+    public static String getLastError(){
+        if (errors==null){
+            return "Not Initialized!";
+        }
         int index=errors.size();
-        return this.errors.remove(index);
+        return errors.remove(index);
     }
 }

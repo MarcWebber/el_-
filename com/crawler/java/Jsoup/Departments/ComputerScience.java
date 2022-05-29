@@ -1,8 +1,13 @@
 package Jsoup.Departments;
 
 import Jsoup.Info;
+import Jsoup.InformationTranslator;
 import Jsoup.MyJsoup;
+import Jsoup.Utils.DepartmentExecutor;
+import Jsoup.Utils.Exceptions.InfoFetchFailureException;
+import Jsoup.Utils.Exceptions.UrlsGetFailureException;
 import Main.MyException.MethodToBeCompletedException;
+import org.jsoup.nodes.Document;
 
 import java.util.Arrays;
 
@@ -15,22 +20,51 @@ import java.util.Arrays;
  * Life is short, I use Java
  */
 public final class ComputerScience implements MyJsoup,Department{
-    private Info[] news;                // the news information
-    private Info[] lectures;            // the lecture information
-    private String[] urls;              // to store the urls that the class need to search
-    static final String departmentName="ComputerScienceUrl";
-
-    public String[] setUrls(){
-        this.urls=setUrls(this.departmentName);
-        return this.urls;
+    static Info[] news;                // the news information
+    static Info[] lectures;            // the lecture information
+    static String[] urls;              // to store the urls that the class need to search
+    static final String departmentName = "SoftwareEngineeringUrl";
+    static final String[] tags=null;   // to define the tags that is needed to modify the information and grasp the information
+    public String[] setUrls() {
+        urls = setUrls(departmentName);
+        return urls;
+    }
+    public Info[] getNews() {
+        return news;
     }
 
-    public Info getInfo(){
+    @Override
+    public void setLectures() {
+
+    }
+
+    public static void setNews(Info[] news) {
+        SoftwareEngineering.news = news;
+    }
+
+    public Info[] getLectures() {
+        return lectures;
+    }
+
+    public static void setLectures(Info[] lectures) {
+        SoftwareEngineering.lectures = lectures;
+    }
+
+
+    public Info[] getInfo() {
         this.setUrls();
-        Arrays.stream(this.urls).
+        Document[] doc = new Document[1];
+        Arrays.stream(urls).
                 forEach(s ->
-                {getByDocument(s,null );});
+                {
+                    doc[0] =getByDocument(s, null);
+                });
         return null;
+    }
+
+    @Override
+    public void setNews() {
+
     }
 
     @Override
@@ -48,5 +82,14 @@ public final class ComputerScience implements MyJsoup,Department{
     public void finalize() throws Throwable {
         super.finalize();
     }
-
+    public ComputerScience() throws InfoFetchFailureException, UrlsGetFailureException {
+        //to exec the basic command needed to construct a department
+        //but i don't think this kind of code is clean and reliable
+//        DepartmentExecutor.exec(this);
+//        //to set the news got from the websites
+//        setNews(getInfo());
+//        setNews(InformationTranslator.translateInformation(this));
+//        setLectures(getInfo());
+//        setLectures(InformationTranslator.translateInformation(this));
+    }
 }

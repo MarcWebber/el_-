@@ -29,7 +29,8 @@ public class DBCPUtil {
     //create dataSource
     static {
         try {
-            InputStream in = DBCPUtil.class.getClassLoader().getResourceAsStream("config/dbcp.properties");
+            System.err.println("the class is initialized!");
+            InputStream in = DBCPUtil.class.getClassLoader().getResourceAsStream("dbcpconfig.properties");
             properties = new Properties();
             properties.load(in);
             try {
