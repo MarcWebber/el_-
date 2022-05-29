@@ -13,6 +13,6 @@ import Main.MyException.MethodToBeCompletedException;
  */
 public final class InformationTranslator {
     public Info translateInformation(Department dept) throws MethodToBeCompletedException{
-        throw new MethodToBeCompletedException();
+        dept.getInfo()
     }
 }

@@ -9,9 +9,9 @@ import org.junit.Test;
  * @ Description:
  * Life is short, I use Java
  */
-//public class test1 {
+public class test1 {
 //    @Test
 //    public static void main(String[] args) {
 //        Main.main(null);
 //    }
-//}
+}

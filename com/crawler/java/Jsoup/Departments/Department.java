@@ -19,4 +19,9 @@ public interface Department {
     String[] setUrls();
     //get Info is used to get the related information
     Info getInfo();
+    void setNews();
+    Info[] getNews();
+    void setLectures();
+    Info[] getLectures();
+
 }

@@ -1,7 +1,9 @@
 package Jsoup;
 
-import java.util.List;
-import java.util.Optional;
+import org.jsoup.nodes.Document;
+
+import java.util.*;
+import java.util.stream.Collector;
 
 /**
  * Created with Intellij IDEA
@@ -19,7 +21,22 @@ import java.util.Optional;
  need to be transformed
  */
 public final class Info {
-    private String primaryKey;
-    private List<Optional<Object>> information;
+    //    private String primaryKey;
+//    private List<Optional<Object>> information;
+    Map<Integer, List<String>> infoList;
+
+    public void set(Document document) {
+        String[] text = document.text().split(" ");
+        List<String> stringList = null;
+        for (int i=1;i<text.length;i++){
+            stringList.add(text[i]);
+        }
+        this.infoList.put(Integer.getInteger(text[0]),
+                stringList);
+    }
+
+    public Info get(){
+        return this.infoList;
+    }
 }
 

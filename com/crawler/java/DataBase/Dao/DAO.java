@@ -1,5 +1,8 @@
 package DataBase.Dao;
 
+import DataBase.SqlResult;
+import Jsoup.InformationTranslator;
+
 /**
  * Created with Intellij IDEA
  *
@@ -8,5 +11,12 @@ package DataBase.Dao;
  * @ Description:
  * Life is short, I use Java
  */
-public class DAO {
+public interface DAO {
+    SqlResult query();
+    /*
+     to insert information into the dataBase
+     */
+    SqlResult insert(InformationTranslator informationTranslator);
+    SqlResult update();
+    SqlResult delete();
 }

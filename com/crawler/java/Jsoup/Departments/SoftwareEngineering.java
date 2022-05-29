@@ -3,6 +3,7 @@ package Jsoup.Departments;
 import Jsoup.Info;
 import Jsoup.MyJsoup;
 import Main.MyException.MethodToBeCompletedException;
+import org.jsoup.nodes.Document;
 
 import java.util.Arrays;
 
@@ -14,22 +15,42 @@ import java.util.Arrays;
  * @ Description:
  * Life is short, I use Java
  */
-public final class SoftwareEngineering implements MyJsoup,Department{
-    private Info[] news;                // the news information
-    private Info[] lectures;            // the lecture information
-    private String[] urls;              // to store the urls that the class need to search
-    static final String departmentName="SoftwareEngineeringUrl";
+public final class SoftwareEngineering implements MyJsoup, Department {
 
-    public String[] setUrls(){
-        this.urls=setUrls(this.departmentName);
-        return this.urls;
+
+    static Info[] news;                // the news information
+    static Info[] lectures;            // the lecture information
+    static String[] urls;              // to store the urls that the class need to search
+    static final String departmentName = "SoftwareEngineeringUrl";
+    public String[] setUrls() {
+        urls = setUrls(departmentName);
+        return urls;
+    }
+    public Info[] getNews() {
+        return news;
     }
 
-    public Info getInfo(){
+    public static void setNews(Info[] news) {
+        SoftwareEngineering.news = news;
+    }
+
+    public Info[] getLectures() {
+        return lectures;
+    }
+
+    public static void setLectures(Info[] lectures) {
+        SoftwareEngineering.lectures = lectures;
+    }
+
+
+    public Info getInfo() {
         this.setUrls();
-        Arrays.stream(this.urls).
+        Document[] doc = new Document[1];
+        Arrays.stream(urls).
                 forEach(s ->
-                {getByDocument(s,null );});
+                {
+                    doc[0] =getByDocument(s, null);
+                });
         return null;
     }
 
@@ -47,5 +68,10 @@ public final class SoftwareEngineering implements MyJsoup,Department{
     @Override
     public void finalize() throws Throwable {
         super.finalize();
+    }
+    public SoftwareEngineering(){
+        setNews(getNews());
+        setLectures(getLectures());
+
     }
 }
