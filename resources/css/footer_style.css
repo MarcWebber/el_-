@@ -14,8 +14,21 @@ footer .footer-navi div {
     height: 10vw;
     transform: translate(30%,3vh);
     text-align: center;
+    text-decoration: none;
 }
 
 footer .footer-navi span{
     color: white;
+}
+
+footer .footer_href a{
+    display: block;
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+}
+
+.footer_img{
+    width:25vh; 
+    height:25vh;
 }
