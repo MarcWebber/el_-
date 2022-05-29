@@ -37,7 +37,7 @@ class Section {
         let b=text;
         let c=time;
         let newhtml = "<div class=\"tag\">\n" +
-            "                    <div class=\"tag_title\" style=\"display:inline\" >\n" +  a +
+            "                    <div class=\"tag_title\">\n" +  a +
             "                    </div>\n" +
             "                    <div class=\"tag_text\">\n" + b +
             "                    </div>\n" +
