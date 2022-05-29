@@ -8,6 +8,53 @@
     minimum-scale=1.0, maximum-scale=1.0">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>链接跳转</title>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="resources/scripts/bin.js"></script>
+
+    <script>
+        var window_width = $(window).width();//获取屏幕高度
+        var window_height = $(window).height();
+        // new_alert();
+    </script>
+
+    
+<script>
+    function when_clicked(){
+        var href_here = prompt("请输入您想要输入的链接")
+        if (href_here != null){
+            var plus_button = document.getElementById("plus_button")
+            var container = document.getElementById("wrapper")
+            var this_width = container.offsetWidth
+            var left_val = plus_button.offsetLeft
+            console.log(this_width)
+            var top_val = plus_button.offsetTop
+            var new_left_val
+            var new_top_val
+            new_left_val = left_val + 0.32 * this_width
+            console.log(new_left_val)
+            if (new_left_val > 0.8 * this_width){
+                new_left_val = 0
+                new_top_val = top_val + 0.32 * this_width
+            }
+            plus_button.style.setProperty('left', new_left_val +'px')
+            plus_button.style.setProperty('top', new_top_val +'px')
+            console.log(plus_button.offsetLeft)
+            var href_board = document.createElement("a")
+            var ele = document.createElement("img" );
+            ele.setAttribute("src", "./resources/images/new_link.jfif")
+            href_board.setAttribute("class", "href_two")
+            ele.setAttribute("class", "img_suit")
+            href_board.setAttribute("href", href_here)
+            href_board.setAttribute("target", "_blank")
+            href_board.style.setProperty("left", left_val + "px")
+            href_board.style.setProperty("top", top_val + "px")
+            href_board.appendChild(ele)
+            container.appendChild(href_board)
+        }
+    }
+</script>
+
     <style>
         *{
             margin: 0;
@@ -49,6 +96,14 @@
             height: auto;
         }
 
+        .href_two{
+            text-decoration: none;
+            display: inline-block;
+            width: 32%;
+            height: auto;
+            position: absolute;
+        }
+
         .over_one:hover{
             text-decoration: none;
             color: yellow;
@@ -64,12 +119,12 @@
         }
 
         .align_block_right{
-            position: absolute;
+            /* position: absolute; */
             right: 0%;
         }
 
         .align_block_centre{
-            position: absolute;
+            /* position: absolute; */
             left: 34%;
         }
 
@@ -79,6 +134,11 @@
 
         .text_selected{
             color: blue;
+        }
+
+        .img_suit{
+            width: 100%;
+            height: auto;
         }
 
     </style>
@@ -91,21 +151,19 @@
         <a href="https://www.nju.edu.cn/" class="href_one" target="_blank">
             <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
         </a>
-        <a href="https://ndwy.nju.edu.cn/" class="href_one align_block_centre" target = "_blank">
+        <a href="https://ndwy.nju.edu.cn/" class="href_one" target = "_blank">
             <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
         </a>
-        <a href="https://jw.nju.edu.cn" class="href_one align_block_right" target = "_blank">
+        <a href="https://jw.nju.edu.cn" class="href_one" target = "_blank">
             <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
         </a>
+
+        <img src="./resources/images/get_more_link.png", class="href_two" id="plus_button" onclick="when_clicked()">
+
         <!-- <a href="#" class="href_one" target = "_blank">
             空链接
         </a> -->
     </div>
-    <!-- <div id="footer">
-        <a href="./main.html" class="href_one align_center text_white over_one">信息一览</a>
-        <a href="#" class="href_one align_center text_selected over_one">便捷链接</a>
-        <a href="#" class="href_one align_center text_white over_one">个人中心</a>
-    </div> -->
     <footer>
         <div class="footer-navi">
             <div id="footer_navi1">
@@ -155,4 +213,10 @@
         </div>
     </footer>
 </body>
+
+<script>
+    var GetPlusButton = document.getElementById("plus_button")
+    GetPlusButton.style.setProperty('left', 0 + 'px')
+    GetPlusButton.style.setProperty('top', (0.32 * window_width) + 'px')
+</script>
 </html>
