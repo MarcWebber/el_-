@@ -32,33 +32,34 @@ class Section {
         return $(fatherclassname);
     }
 
-    appendTag(father,title,text,time,i) {
+    appendTag(father,title,text,time, i) {
         let a=title;
         let b=text;
         let c=time;
         let newhtml = "<div class=\"tag\">\n" +
-            "                    <div class=\"tag_title\">\n" +
-            "                        活动标题\n" +
+            "                    <div class=\"tag_title\" style=\"display:inline\" >\n" +  a +
             "                    </div>\n" +
-            "                    <div class=\"tag_text\">\n" +
-            "                        活动描述\n" +
+            "                    <div class=\"tag_text\">\n" + b +
             "                    </div>\n" +
-            "                    <div class=\"tag_time\">\n" +
-            "                        活动时间\n" +
+            "                    <div class=\"tag_time\">\n" + c +
             "                    </div>\n" +
             "                </div>";
         // console.log("father=",father);
         $(father).append(newhtml);
+        console.log(newhtml)
         // $(father)[0].innerHTML(newhtml);
         this.setFont();
     }
 
     // let father = selectFatherSection("section_left");
     // appendTag(father[0], null, null, null);
+
+    
 }
 
 var section = new Section();
 section.setTextSize();
-var sections = section.selectFatherSection(".section_left");
-section.appendTag(".section_left","震惊！","南京大学深夜放毒！","2022-1-1",1);
-section.appendTag(".section_right","震惊！","南京大学深夜放毒！","2022-1-1",2);
+// var sections = section.selectFatherSection(".section_left");
+section.appendTag("#section_news_left","震惊！","南京大学深夜放毒！","2022-1-1",1);
+section.appendTag("#section_news_right","震惊！","南京大学深夜放毒！","2022-1-1",2);
+section.appendTag("#section_lecture_right", "“研路相伴·职涯点津”", "求职经验系列分享会第8期", "2022-5-23", 1)

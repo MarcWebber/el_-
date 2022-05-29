@@ -108,16 +108,16 @@
         <div class="section_top">
             <div class="section_ui">ui
             </div>
-            <div class="section_text">活动速览
+            <div class="section_text" onclick="window.location.href='./activity.html'; ">活动速览
             </div>
             <div class="section_extra">最新活动早知道
             </div>
         </div>
         <div class="section_main">
-            <div class="section_left">
+            <div class="section_left" id="section_activity_left">
 
             </div>
-            <div class="section_right">
+            <div class="section_right" id="section_activity_right">
 
             </div>
         </div>
@@ -128,13 +128,13 @@
             <div class="section_ui">ui
 <!--                <img src="resources/images/讲座.png" alt="123">-->
             </div>
-            <div class="section_text">讲座信息
+            <div class="section_text" onclick="window.location.href='./lecture.html'; ">讲座信息
             </div>
             <div class="section_extra">哪些大牛在开讲
             </div>
         </div>
         <div class="section_main">
-            <div class="section_left">
+            <div class ="section_left" id="section_lecture_left">
                 <div class="tag">
                     <div class="tag_title">
                         标题（动态获取）
@@ -147,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section_right">
+            <div class="section_right" id="section_lecture_right">
 
             </div>
         </div>
@@ -159,13 +159,13 @@
             <div class="section_ui">ui
 <!--                <img src="resources/images/讲座.png" alt="123">-->
             </div>
-            <div class="section_text">院系新闻
+            <div class="section_text" onclick="window.location.href='./news.html'; ">院系新闻
             </div>
             <div class="section_extra">院系事务知多少
             </div>
         </div>
         <div class="section_main">
-            <div class="section_left">
+            <div class="section_left" id="section_news_left">
                 <div class="tag">
                     <div class="tag_title">
                         标题（动态获取）
@@ -178,7 +178,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section_right">
+            <div class="section_right" id="section_news_right">
 
             </div>
         </div>
@@ -310,6 +310,7 @@ function slide() {
 //     });
 //     eventDispose(carousel,config); // 对一些浏览器事件处理
 //     // createBtnGroup(carousel,config); // 按钮组的处理
+// 上面注释掉的代码有bug
 timer = setInterval(() => {
     slide()
 }, 2000); // 设置定时器定时切换
@@ -319,4 +320,6 @@ timer = setInterval(() => {
 // alert("还说呢杨")
 </script>
 <script src="resources/scripts/section_script.js"></script>
+
+
 </html>
