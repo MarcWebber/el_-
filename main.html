@@ -7,6 +7,8 @@
           minimum-scale=1.0, maximum-scale=1.0">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="resources/scripts/bin.js"></script>
+    <!-- local SQL here -->
+    <script src="resources/scripts/localSQL.js"></script>
     <script>
         var window_width = $(window).width();//获取屏幕高度
         var window_height = $(window).height();
@@ -136,13 +138,13 @@
         <div class="section_main">
             <div class ="section_left" id="section_lecture_left">
                 <div class="tag">
-                    <div class="tag_title">
+                    <div class="tag_title" id="main_title">
                         标题（动态获取）
                     </div>
-                    <div class="tag_text">
+                    <div class="tag_text" id="main_text">
                         文本域（动态获取）
                     </div>
-                    <div class="tag_time">
+                    <div class="tag_time" id="main_time">
                         Date
                     </div>
                 </div>
