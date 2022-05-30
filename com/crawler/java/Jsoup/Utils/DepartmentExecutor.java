@@ -22,14 +22,17 @@ import java.util.List;
 public class DepartmentExecutor {
     static List<String> errors;
     public static String exec(Department dept) throws InfoFetchFailureException, UrlsGetFailureException {
-        if (dept.setUrls()==null){
-            errors.add("UrlsGetFailureException");
-            throw new UrlsGetFailureException();
+        if (errors==null){
+            errors=new ArrayList<>();
         }
-        if (dept.getInfo()==null){
-            errors.add("InfoFetchFailureException");
-            throw new InfoFetchFailureException();
-        }
+//        if (dept.setUrls()==null){
+//            errors.add("UrlsGetFailureException");
+//            throw new UrlsGetFailureException();
+//        }
+//        if (dept.getInfo()==null){
+//            errors.add("InfoFetchFailureException");
+//            throw new InfoFetchFailureException();
+//        }
         errors.add("Success!");
         return getLastError();
     }

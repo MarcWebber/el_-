@@ -14,4 +14,5 @@ public class test1 {
 //    public static void main(String[] args) {
 //        Main.main(null);
 //    }
+    Thread thread=new Thread();
 }

@@ -88,9 +88,13 @@ public final class SoftwareEngineering implements MyJsoup, Department {
         //but i don't think this kind of code is clean and reliable
         DepartmentExecutor.exec(this);
         //to set the news got from the websites
-//        setNews(getInfo());
+        setNews(getInfo());
 //        setNews(InformationTranslator.translateInformation(this));
-//        setLectures(getInfo());
+        setLectures(getInfo());
 //        setLectures(InformationTranslator.translateInformation(this));
+    }
+
+    public static void main(String[] args) throws InfoFetchFailureException, UrlsGetFailureException {
+        SoftwareEngineering softwareEngineering=new SoftwareEngineering();
     }
 }
