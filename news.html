@@ -7,6 +7,7 @@
           minimum-scale=1.0, maximum-scale=1.0">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="resources/scripts/bin.js"></script>
+    <script src="./resources/scripts/newsSQL.js"></script>
     <script>
         var window_width = $(window).width();//获取屏幕高度
         var window_height = $(window).height();
@@ -151,9 +152,52 @@
 <script src="./resources/scripts/render_content.js"></script>
 
 <script>
-    AppendHrefToContainer("测试1", "这里放了一个测试网址", "1145-1-4", "https://www.baidu.com/")
-    AppendHrefToContainer("测试2", "这里放了一些测试网址", "1919-8-10", "https://www.youku.com/")
+    function CreateList(){
+        for (let i = 0;  i < 12; i++){
+            AppendHrefToContainer(i, "href_list", "title_list", "text_list", "date_list")
+        }
+    }
+    
+    function ResetList(){
+        for (let i = 0; i < 12; i++){
+            SetTitleFromNewsSQL("title_list", i)
+            SetHrefFromNewsSQL("href_list", i)
+            SetDateFromNewsSQL("date_list", i)
+        }
+        console.log("test")
+    }
+    CreateList()
+    ResetList()
+    // AppendHrefToContainer("测试1", "这里放了一个测试网址", "1145-1-4", "https://www.baidu.com/")
+    // AppendHrefToContainer("测试2", "这里放了一些测试网址", "1919-8-10", "https://www.youku.com/")
+    var _element = document.getElementById('container'),   
+    OriginalPos = _element.offsetTop,  // 初始的值  
+    Container_height = _element.offsetHeight + OriginalPos; 
+    var is_touching = false
 
+    _element.addEventListener("touchstart", function(e){
+        let touch_pl = e.touches[0].pageY;
+        if (touch_pl > OriginalPos && touch_pl < OriginalPos + Container_height){
+           is_touching = true // 记录差值
+       }
+    }, false);
+
+    _element.addEventListener('touchmove', function(e) {  
+    // e.touches[0].pageY 当前位置  
+       let touch_pl = e.touches[0].pageY;
+       if (is_touching){
+           _element.style.setProperty("top", touch_pl) // 记录差值
+       }
+           
+    }, false);
+
+    _element.addEventListener('touchend', function(e) {  
+        _element.style.setProperty("top", OriginalPos)
+        RecreateTable()
+        ResetList()
+
+        is_touching = false
+    }, false);
 </script>
 
 </html>

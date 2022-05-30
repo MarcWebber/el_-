@@ -16,7 +16,7 @@ console.log(result);
 
 
 function CreateTableFromInputStream(s){
-    
+    console.log(s)
     let tx
     db.transaction(function (tx) {
         tx.executeSql('DROP TABLE IF EXISTS LOGS');

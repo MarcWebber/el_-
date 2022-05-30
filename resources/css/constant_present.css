@@ -1,7 +1,7 @@
 
 #container{
     top: 14vh;
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     height: auto;
     bottom: 10vh;
@@ -14,7 +14,7 @@
 .new_title{
    color: black;
    font-weight: bolder;
-   font-size: x-large;
+   font-size:larger;
 }
 
 .new_text{
