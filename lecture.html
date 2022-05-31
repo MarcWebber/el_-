@@ -159,13 +159,13 @@
     
     function ResetList(){
         for (let i = 0; i < 12; i++){
-            SetTitleFromLecturesSQL("title_list", i)
-            SetHrefFromLecturesSQL("href_list", i)
-            SetDateFromLecturesSQL("date_list", i)
+            SetTitleFromLecturesSQL("title_list" + i, i)
+            SetHrefFromLecturesSQL("href_list" + i, i)
+            SetDateFromLecturesSQL("date_list"+i, i)
         }
         console.log("test")
     }
-    RecreateTable()
+    RecreateLecturesTable()
     CreateList()
     ResetList()
     // AppendHrefToContainer("测试1", "这里放了一个测试网址", "1145-1-4", "https://www.baidu.com/")
@@ -193,7 +193,7 @@
 
     _element.addEventListener('touchend', function(e) {  
         _element.style.setProperty("top", OriginalPos)
-        RecreateTable()
+        RecreateLecturesTable()
         ResetList()
 
         is_touching = false

@@ -85,6 +85,7 @@ section .tag{
     height: 48%;
     width: 100%;
     background-color: #faf0fa;
+    color: black;
     background-image: linear-gradient(45deg, #f5e5f5 0%, #deecf1 100%);
     align-items: flex-start;
 }

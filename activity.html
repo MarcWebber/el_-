@@ -159,13 +159,12 @@
     
     function ResetList(){
         for (let i = 0; i < 12; i++){
-            SetTitleFromActivitiesSQL("title_list", i)
-            SetHrefFromActivitiesSQL("href_list", i)
-            SetDateFromActivitiesSQL("date_list", i)
+            SetTitleFromActivitiesSQL("title_list" + i, i)
+            SetHrefFromActivitiesSQL("href_list" + i, i)
+            SetDateFromActivitiesSQL("date_list" + i, i)
         }
-        console.log("test")
     }
-    RecreateTable()
+    RecreateActivitiesTable()
     CreateList()
     ResetList()
     // AppendHrefToContainer("测试1", "这里放了一个测试网址", "1145-1-4", "https://www.baidu.com/")
@@ -193,7 +192,7 @@
 
     _element.addEventListener('touchend', function(e) {  
         _element.style.setProperty("top", OriginalPos)
-        RecreateTable()
+        RecreateActivitiesTable()
         ResetList()
 
         is_touching = false

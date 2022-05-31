@@ -1,26 +1,24 @@
-function find(str, cha, num) {
-    var x = str.indexOf(cha);
-    for (var i = 0; i < num; i++) {
-        x = str.indexOf(cha, x + 1);
-    }
-    return x;
-}
-function jsonClone(obj) {
-    return JSON.parse(JSON.stringify(obj));
-}
+// function CreateSQL(){
+//     let db
+//     db = openDatabase("MySql", "1.0", "我的数据库描述", 1024 * 1024 * 1024);
+//     var result = db ? "数据库创建成功" : "数据库创建失败";
+//     console.log(result);
+//     return db
+// }
 
-
-let db = openDatabase("MySql", "1.0", "我的数据库描述", 1024 * 1024 * 1024);
-let result = db ? "数据库创建成功" : "数据库创建失败";
+var db
+if (db == null){
+    db = openDatabase("MySql", "1.0", "我的数据库描述", 1024 * 1024 * 1024);
+}
+var result = db ? "数据库创建成功" : "数据库创建失败";
 console.log(result);
 
 
-function CreateTableFromInputStream(s){
-    console.log(s)
+function CreateTableFromInputStream(s, sql_name){
     let tx
     db.transaction(function (tx) {
-        tx.executeSql('DROP TABLE IF EXISTS LOGS');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id, title, href , date)');
+        tx.executeSql('DROP TABLE IF EXISTS ' + sql_name);
+        tx.executeSql('CREATE TABLE IF NOT EXISTS '+ sql_name + ' (id, title, href , date)');
         //tx.executeSql('INSERT INTO LOGS VALUES (1,\'title1\',\'href1\',\'time\')');
     });
 
@@ -42,7 +40,7 @@ function CreateTableFromInputStream(s){
         //alert([num, s1, s2, s3, 0]);
         db.transaction(function (tx) {
 
-            tx.executeSql('INSERT INTO LOGS VALUES (?, ?, ?, ?)', [num, s1, s2, s3]);
+            tx.executeSql('INSERT INTO ' + sql_name + ' VALUES (?, ?, ?, ?)', [num, s1, s2, s3]);
         });
 
     }

@@ -160,17 +160,14 @@
     
     function ResetList(){
         for (let i = 0; i < 12; i++){
-            SetTitleFromNewsSQL("title_list", i)
-            SetHrefFromNewsSQL("href_list", i)
-            SetDateFromNewsSQL("date_list", i)
+            SetTitleFromNewsSQL(("title_list" + i), i)
+            SetHrefFromNewsSQL(("href_list" + i), i)
+            SetDateFromNewsSQL(("date_list" + i), i)
         }
-        console.log("test")
     }
-    RecreateTable()
+    RecreateNewsTable()
     CreateList()
     ResetList()
-    // AppendHrefToContainer("测试1", "这里放了一个测试网址", "1145-1-4", "https://www.baidu.com/")
-    // AppendHrefToContainer("测试2", "这里放了一些测试网址", "1919-8-10", "https://www.youku.com/")
     var _element = document.getElementById('container'),   
     OriginalPos = _element.offsetTop,  // 初始的值  
     Container_height = _element.offsetHeight + OriginalPos; 
@@ -194,7 +191,7 @@
 
     _element.addEventListener('touchend', function(e) {  
         _element.style.setProperty("top", OriginalPos)
-        RecreateTable()
+        RecreateNewsTable()
         ResetList()
 
         is_touching = false

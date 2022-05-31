@@ -1,4 +1,3 @@
-"use strict"
 
 class Section {
     constructor() {
@@ -60,6 +59,6 @@ class Section {
 var section = new Section();
 section.setTextSize();
 // var sections = section.selectFatherSection(".section_left");
-section.appendTag("#section_news_left","震惊！","南京大学深夜放毒！","2022-1-1",1);
-section.appendTag("#section_news_right","震惊！","南京大学深夜放毒！","2022-1-1",2);
-section.appendTag("#section_lecture_right", "“研路相伴·职涯点津”", "求职经验系列分享会第8期", "2022-5-23", 1)
+// section.appendTag("#section_news_left","震惊！","南京大学深夜放毒！","2022-1-1",1);
+// section.appendTag("#section_news_right","震惊！","南京大学深夜放毒！","2022-1-1",2);
+// section.appendTag("#section_lecture_right", "“研路相伴·职涯点津”", "求职经验系列分享会第8期", "2022-5-23", 1)

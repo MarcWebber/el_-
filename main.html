@@ -8,8 +8,9 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="resources/scripts/bin.js"></script>
     <!-- local SQL here -->
-    <!-- <script src="./resources/scripts/SQLGetAndSert.js"></script> -->
     <script src="resources/scripts/newsSQL.js"></script>
+    <script src="./resources/scripts/ActivitiesSQL.js"></script>
+    <script src="./resources/scripts/lectureSQL.js"></script>
     <script>
         var window_width = $(window).width();//获取屏幕高度
         var window_height = $(window).height();
@@ -118,10 +119,24 @@
         </div>
         <div class="section_main">
             <div class="section_left" id="section_activity_left">
-
+                <a class="tag" id = "activities_left_href">
+                    <div class="tag_title" id="activities_left_title">
+                    </div>
+                    <div class="tag_text" id="activities_left_text">
+                    </div>
+                    <div class="tag_time" id="activities_left_date">
+                    </div>
+                </a>
             </div>
             <div class="section_right" id="section_activity_right">
-
+                <a class="tag" id = "activities_right_href">
+                    <div class="tag_title" id="activities_right_title">
+                    </div>
+                    <div class="tag_text" id="activities_right_text">
+                    </div>
+                    <div class="tag_time" id="activities_right_date">
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -138,20 +153,24 @@
         </div>
         <div class="section_main">
             <div class ="section_left" id="section_lecture_left">
-                <div class="tag">
-                    <div class="tag_title" id="main_title">
-                        标题（动态获取）
+                <a class="tag" id = "lecture_left_href">
+                    <div class="tag_title" id="lecture_left_title">
                     </div>
-                    <div class="tag_text" id="main_text">
-                        文本域（动态获取）
+                    <div class="tag_text" id="lecture_left_text">
                     </div>
-                    <div class="tag_time" id="main_time">
-                        Date
+                    <div class="tag_time" id="lecture_left_date">
                     </div>
-                </div>
+                </a>
             </div>
             <div class="section_right" id="section_lecture_right">
-
+                <a class="tag" id = "lecture_right_href">
+                    <div class="tag_title" id="lecture_right_title">
+                    </div>
+                    <div class="tag_text" id="lecture_right_text">
+                    </div>
+                    <div class="tag_time" id="lecture_right_date">
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -169,20 +188,24 @@
         </div>
         <div class="section_main">
             <div class="section_left" id="section_news_left">
-                <div class="tag">
-                    <div class="tag_title">
-                        标题（动态获取）
-                    </div>
-                    <div class="tag_text">
-                        文本域（动态获取）
-                    </div>
-                    <div class="tag_time">
-                        Date
-                    </div>
-                </div>
+                    <a class="tag" id = "news_left_href">
+                        <div class="tag_title" id="news_left_title">
+                        </div>
+                        <div class="tag_text" id="news_left_text">
+                        </div>
+                        <div class="tag_time" id="news_left_date">
+                        </div>
+                    </a>
             </div>
             <div class="section_right" id="section_news_right">
-
+                <a class="tag" id = "news_right_href">
+                    <div class="tag_title" id="news_right_title">
+                    </div>
+                    <div class="tag_text" id="news_right_text">
+                    </div>
+                    <div class="tag_time" id="news_right_date">
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -287,33 +310,6 @@ function slide() {
     // btnList[curIndex] .className = "unitBtn btnActive"; // 设置当前按钮为蓝色
 }
 
-// function eventDispose(carousel,config){
-//     document.addEventListener('visibilitychange',function(){ // 浏览器切换页面会导致动画出现问题，监听页面切换
-//         if(document.visibilityState==='hidden') clearInterval(timer); // 页面隐藏清除定时器
-//         else timer = setInterval(() => {slide()},config.interval); // 重设定时器
-//     });
-//     carousel.addEventListener('mouseover',function(){ // 鼠标移动到容器则不切换动画，停止计时器
-//         clearInterval(timer); // 页面隐藏清除定时器
-//     });
-//     carousel.addEventListener('mouseleave',function(){ // 鼠标移出容器则开始动画
-//         timer = setInterval(() => {slide()},config.interval); // 重设定时器
-//     });
-// }
-
-// (function start() {
-//     const config = {
-//         height: "300px", // 配置高度
-//         interval: 100 // 配置轮播时间间隔
-//     };
-//     let carousel = document.getElementById("img_container"); //获取容器对象的引用
-//     // carousel.style.height = config.height; // 将轮播容器高度设定
-//     document.querySelectorAll("#img_container span").forEach((v,i) => {
-//         img_list.push(v); // 获取所有图片组成数组
-//         v.className = i === 0 ?  "imgActive" : "";
-//     });
-//     eventDispose(carousel,config); // 对一些浏览器事件处理
-//     // createBtnGroup(carousel,config); // 按钮组的处理
-// 上面注释掉的代码有bug
 timer = setInterval(() => {
     slide()
 }, 2000); // 设置定时器定时切换
@@ -323,6 +319,37 @@ timer = setInterval(() => {
 // alert("还说呢杨")
 </script>
 <script src="resources/scripts/section_script.js"></script>
+
+<script>
+
+    function SetLectureHurdle(title_name, href_name, time_name, index){
+            SetTitleFromLecturesSQL(title_name, index)
+            SetHrefFromLecturesSQL(href_name, index)
+            SetDateFromLecturesSQL(time_name, index)
+        } 
+    function SetNewsHurdle(title_name, href_name, time_name, index){
+            SetTitleFromNewsSQL(title_name, index)
+            SetHrefFromNewsSQL(href_name, index)
+            SetDateFromNewsSQL(time_name, index)
+    }
+
+    function SetActivitiesHurdle(title_name, href_name, time_name, index){
+            SetTitleFromActivitiesSQL(title_name, index)
+            SetHrefFromActivitiesSQL(href_name, index)
+            SetDateFromActivitiesSQL(time_name, index)
+    }
+
+    RecreateNewsTable()
+    RecreateActivitiesTable()
+    RecreateLecturesTable()
+    SetLectureHurdle("lecture_left_title", "lecture_left_href", "lecture_left_date", 0)
+    SetLectureHurdle("lecture_right_title", "lecture_right_href", "lecture_right_date", 1)
+    SetNewsHurdle("news_left_title", "news_left_href", "news_left_date", 0)
+    SetNewsHurdle("news_right_title", "news_right_href", "news_right_date", 1)
+    SetActivitiesHurdle("activities_left_title", "activities_left_href", "activities_left_date", 0)
+    SetActivitiesHurdle("activities_right_title", "activities_right_href", "activities_right_date", 1)
+
+</script>
 
 
 </html>
