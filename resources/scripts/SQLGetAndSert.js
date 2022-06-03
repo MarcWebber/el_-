@@ -56,5 +56,7 @@ function GetInfoListFromThisJson(index, json){
     ret_map['text'] = this_obj.index.text
     ret_map['date'] = this_obj.index.date
     ret_map['href'] = this_obj.index.href
+
+    return ret_map
     
 }
