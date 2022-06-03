@@ -73,11 +73,10 @@ url = 'https://sis.nju.edu.cn/46084/list.htm'
 url = 'https://im.nju.edu.cn/xgxw/list.htm'
 url = 'https://sociology.nju.edu.cn/17644/list.htm'
 url = 'https://math.nju.edu.cn/fzlm/yxxw1/index.html'
-url = 'https://physics.nju.edu.cn/xwgg/gg/index.html'
+# url = 'https://physics.nju.edu.cn/xwgg/gg/index.html'
 #url = 'https://astronomy.nju.edu.cn/twdt/tzgg/index.html'
 ###########################################################
-driver = webdriver.PhantomJS(
-    executable_path=r'D:/Programs/phantomjs-2.1.1-windows/bin/phantomjs.exe')
+driver = webdriver.Edge()
 driver.set_window_size(2560, 1440)
 
 
