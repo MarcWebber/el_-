@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
+    <!-- <meta name="viewport"
     content="width=device-width,user-scalable=0,initial-scale=1.0,
-    minimum-scale=1.0, maximum-scale=1.0">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    minimum-scale=1.0, maximum-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>链接跳转</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
@@ -94,6 +94,8 @@
             display: inline-block;
             width: 32%;
             height: auto;
+            color: black;
+            text-align: center;
         }
 
         .href_two{
@@ -141,6 +143,7 @@
             height: auto;
         }
 
+
     </style>
         <!-- <link rel="stylesheet" href="resources/css/head_style.css"> -->
         <link rel="stylesheet" href="resources/css/footer_style.css">
@@ -148,14 +151,17 @@
 <body>
     <div id="header">便捷链接</div>
     <div id = "wrapper">
-        <a href="https://www.nju.edu.cn/" class="href_one" target="_blank">
+        <a href="https://www.nju.edu.cn/" class="href_one" target="_blank" id="href_1">
             <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
+            <!-- <p>南京大学官网</p> -->
         </a>
-        <a href="https://ndwy.nju.edu.cn/" class="href_one" target = "_blank">
+        <a href="https://ndwy.nju.edu.cn/" class="href_one" target = "_blank" id="href_2">
             <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
+            <!-- <p>南京大学五育管理系统</p> -->
         </a>
-        <a href="https://jw.nju.edu.cn" class="href_one" target = "_blank">
+        <a href="https://jw.nju.edu.cn" class="href_one" target = "_blank" id="href_3">
             <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
+            <!-- <p>南京大学本科生院</p> -->
         </a>
 
         <img src="./resources/images/get_more_link.png", class="href_two" id="plus_button" onclick="when_clicked()">
@@ -215,8 +221,15 @@
 </body>
 
 <script>
+    var GetUpButton = document.getElementById('href_1')
+    var top_plus = GetUpButton.offsetHeight
     var GetPlusButton = document.getElementById("plus_button")
     GetPlusButton.style.setProperty('left', 0 + 'px')
-    GetPlusButton.style.setProperty('top', (0.32 * window_width) + 'px')
+    GetPlusButton.style.setProperty('top', top_plus + 'px')
+    // for (let i = 1; i <= 3; i++){
+    //     let button_here = document.getElementById("href_" + i)
+    //     button_here.style.setProperty('position', 'absolute')
+    //     button_here.style.setProperty('top', 5 + 'vh')
+    // }
 </script>
 </html>
