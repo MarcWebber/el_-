@@ -59,10 +59,11 @@ header .header-navi div{
     border: dashed 1px white;
 }
 
-.header_href a{
+.header_href {
     display: block;
     width: 100%;
     height: auto;
+    text-decoration: none;
 }
 
 .header-text{
