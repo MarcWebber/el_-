@@ -1,9 +1,13 @@
 package com.el.Servlet;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import com.el.Login.LoginController;
+import com.el.utils.Login.LoginDAOUtil;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+
 import java.io.IOException;
 
 /**
@@ -17,17 +21,28 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username=req.getParameter("name");
-        String password=req.getParameter("password");
-        String[] parameters=req.getParameterValues(null);
-        System.out.println("username");
-        System.out.println("password");
-        resp.setCharacterEncoding("UTF-8");
 //        req.getRequestDispatcher("/r/index.jsp").forward(req,resp);
+        doLoginIn(Integer.parseInt(req.getParameter("name")),req.getParameter("pwd"),resp);
+    }
+
+    protected void doLoginIn(int Id, String password, HttpServletResponse resp) {
+        try {
+            if (new LoginController(Id, password).check()) {
+                resp.getWriter().print(true);
+                Initializer.init(Id);
+                System.out.println(Id);
+                resp.sendRedirect("main.jsp");
+            } else {
+                resp.getWriter().print(false);
+                resp.sendRedirect("index.jsp");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doGet(req,resp);
+        this.doPost(req, resp);
     }
 }

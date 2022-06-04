@@ -22,11 +22,11 @@ import java.util.List;
  * @ Description:
  * Life is short, I use Java
  */
-public class NewsController {
+public class LectureController {
     private final String deptName;
     private final List<List<String>> newsLists ;
     private JSONObject newsJSON;
-    public NewsController(String deptName){
+    public LectureController(String deptName){
         /*
          * @BUG!!!!
          * May produce a bug here
@@ -98,7 +98,7 @@ public class NewsController {
     public void showInfo(){
         System.out.println("deptName"+deptName);
         newsLists.forEach(s->{
-        s.forEach(System.out::println);
+            s.forEach(System.out::println);
         });
     }
 }

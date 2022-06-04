@@ -47,6 +47,16 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>com.el.Servlet.NewsServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/NewsServlet</url-pattern>
+  </servlet-mapping>
+
   <!-- URL space mappings ============================================= -->
 
   <!--

@@ -22,6 +22,7 @@ import java.util.Properties;
 public class UserUtil {
     private static Properties properties;
     private static DataSource dataSource;
+
     //create dataSource
     static {
         try {
@@ -57,26 +58,30 @@ public class UserUtil {
         }
         return connection;
     }
-    public static void release(Connection conn, Statement st, ResultSet rs){
-        assert rs!=null;
-        try {
-            rs.close();
-        }catch (SQLException e){
-            e.printStackTrace();
+
+    public static void release(Connection conn, Statement st, ResultSet rs) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
-        assert st!=null;
-        try {
-            st.close();
-        }catch (SQLException e){
-            e.printStackTrace();
+        if (st != null) {
+            try {
+                st.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
-        assert conn!=null;
-        try {
-            conn.close();
-        }catch (SQLException e){
-            e.printStackTrace();
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

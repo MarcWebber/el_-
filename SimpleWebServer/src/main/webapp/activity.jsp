@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +54,7 @@
         </div>
 
         <div id="navi2">
-            <a href="./lecture.html" class="header_href">
+            <a href="lecture.jsp" class="header_href">
                 <p class="navi_line1">
                     <img src="resources/images/lecture.png" width="25vh" height="25vh" alt="导航图2">
                 </p>
@@ -64,7 +65,7 @@
         </div>
 
         <div id="navi3">
-            <a href="./href.html" class="header_href">
+            <a href="href.jsp" class="header_href">
                 <p class="navi_line1">
                     <img src="resources/images/link.png" width=25vh height=25vh alt="导航图3">
                 </p>
@@ -75,7 +76,7 @@
         </div>
 
         <div id="navi4">
-            <a href="./home.html" class="header_href">
+            <a href="home.jsp" class="header_href">
                 <p class="navi_line1">
                     <img src="resources/images/personal_info.png" width=25vh height=25vh alt="!">
                 </p>
@@ -96,7 +97,7 @@
 <footer>
     <div class="footer-navi">
         <div id="footer_navi1">
-            <a href="./main.html" class="footer_href">
+            <a href="main.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/activity.png" alt="导航图1" width=25vh height=25vh>
                 </p>
@@ -108,7 +109,7 @@
 
 
         <div id="footer_navi2">
-            <a href="./news.html" class="footer_href">
+            <a href="news.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/lecture.png" alt="导航图2" width=25vh height=25vh>
                 </p>
@@ -119,7 +120,7 @@
         </div>
 
         <div id="footer_navi3">
-            <a href="./href.html" class="footer_href">
+            <a href="href.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/link.png" alt="导航图3" width=25vh height=25vh>
                 </p>
@@ -130,7 +131,7 @@
         </div>
 
         <div id="footer_navi4" class="footer_href">
-            <a href="./home.html" class="footer_href">
+            <a href="home.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/personal_info.png" alt="导航图4" width=25vh height=25vh>
                 </p>
@@ -151,51 +152,65 @@
 <script src="./resources/scripts/render_content.js"></script>
 
 <script>
-    function CreateList(){
-        for (let i = 0;  i < 12; i++){
+    function CreateList() {
+        for (let i = 0; i < 12; i++) {
             AppendHrefToContainer(i, "href_list", "title_list", "text_list", "date_list")
         }
     }
-    
-    function ResetList(){
-        for (let i = 0; i < 12; i++){
+
+    function ResetList() {
+        for (let i = 0; i < 12; i++) {
             SetTitleFromActivitiesSQL("title_list" + i, i)
             SetHrefFromActivitiesSQL("href_list" + i, i)
             SetDateFromActivitiesSQL("date_list" + i, i)
         }
     }
+
     RecreateActivitiesTable()
     CreateList()
     ResetList()
     // AppendHrefToContainer("测试1", "这里放了一个测试网址", "1145-1-4", "https://www.baidu.com/")
     // AppendHrefToContainer("测试2", "这里放了一些测试网址", "1919-8-10", "https://www.youku.com/")
-    var _element = document.getElementById('container'),   
-    OriginalPos = _element.offsetTop,  // 初始的值  
-    Container_height = _element.offsetHeight + OriginalPos; 
+    var _element = document.getElementById('container'),
+        OriginalPos = _element.offsetTop,  // 初始的值
+        Container_height = _element.offsetHeight + OriginalPos;
     var is_touching = false
 
-    _element.addEventListener("touchstart", function(e){
+    _element.addEventListener("touchstart", function (e) {
         let touch_pl = e.touches[0].pageY;
-        if (touch_pl > OriginalPos && touch_pl < OriginalPos + Container_height){
-           is_touching = true // 记录差值
-       }
+        if (touch_pl > OriginalPos && touch_pl < OriginalPos + Container_height) {
+            is_touching = true // 记录差值
+        }
     }, false);
 
-    _element.addEventListener('touchmove', function(e) {  
-    // e.touches[0].pageY 当前位置  
-       let touch_pl = e.touches[0].pageY;
-       if (is_touching){
-           _element.style.setProperty("top", touch_pl) // 记录差值
-       }
-           
+    _element.addEventListener('touchmove', function (e) {
+        // e.touches[0].pageY 当前位置
+        let touch_pl = e.touches[0].pageY;
+        if (is_touching) {
+            _element.style.setProperty("top", touch_pl) // 记录差值
+        }
+
     }, false);
 
-    _element.addEventListener('touchend', function(e) {  
+    _element.addEventListener('touchend', function (e) {
         _element.style.setProperty("top", OriginalPos)
         RecreateActivitiesTable()
         ResetList()
 
         is_touching = false
     }, false);
+</script>
+
+<script>
+    function load() {
+        $.post({
+            url:"${pageContext.request.contextPath}/NewsServlet",
+            data:{"deptName":"softwareengineering"},
+            success:function (){
+                console.log("hahaha!");
+                alert("hahahha!")
+            }
+        })
+    }
 </script>
 </html>

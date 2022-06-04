@@ -1,5 +1,6 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -167,7 +168,7 @@
     <footer>
         <div class="footer-navi">
             <div id="footer_navi1">
-                <a href="./main.html" class="footer_href">
+                <a href="main.jsp" class="footer_href">
                     <p class="navi_line1">
                         <img src="./resources/images/activity.png" alt="导航图1" width=25vh height=25vh>
                     </p>
@@ -179,7 +180,7 @@
     
     
             <div id="footer_navi2">
-                <a href="./news.html" class="footer_href">
+                <a href="news.jsp" class="footer_href">
                     <p class="navi_line1">
                         <img src="./resources/images/lecture.png" alt="导航图2" width=25vh height=25vh>
                     </p>
@@ -201,7 +202,7 @@
             </div>
     
             <div id="footer_navi4" class="footer_href">
-                <a href="./home.html" class="footer_href">
+                <a href="home.jsp" class="footer_href">
                     <p class="navi_line1">
                         <img src="./resources/images/personal_info.png" alt="导航图4" width=25vh height=25vh>
                     </p>

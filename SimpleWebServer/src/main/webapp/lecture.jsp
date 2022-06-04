@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +43,7 @@
 
     <div class="header-navi">
         <div id="navi1">
-            <a href="./activity.html" class="header_href">
+            <a href="activity.jsp" class="header_href">
                 <p class="navi_line1">
                     <img src="resources/images/activity.png" width="25vh" height="25vh" alt="导航图1">
                 </p>
@@ -64,7 +65,7 @@
         </div>
 
         <div id="navi3">
-            <a href="./href.html" class="header_href">
+            <a href="href.jsp" class="header_href">
                 <p class="navi_line1">
                     <img src="resources/images/link.png" width=25vh height=25vh alt="导航图3">
                 </p>
@@ -75,7 +76,7 @@
         </div>
 
         <div id="navi4">
-            <a href="./home.html" class="header_href">
+            <a href="home.jsp" class="header_href">
                 <p class="navi_line1">
                     <img src="resources/images/personal_info.png" width=25vh height=25vh alt="!">
                 </p>
@@ -96,7 +97,7 @@
 <footer>
     <div class="footer-navi">
         <div id="footer_navi1">
-            <a href="./main.html" class="footer_href">
+            <a href="main.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/activity.png" alt="导航图1" width=25vh height=25vh>
                 </p>
@@ -108,7 +109,7 @@
 
 
         <div id="footer_navi2">
-            <a href="./news.html" class="footer_href">
+            <a href="news.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/lecture.png" alt="导航图2" width=25vh height=25vh>
                 </p>
@@ -119,7 +120,7 @@
         </div>
 
         <div id="footer_navi3">
-            <a href="./href.html" class="footer_href">
+            <a href="href.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/link.png" alt="导航图3" width=25vh height=25vh>
                 </p>
@@ -130,7 +131,7 @@
         </div>
 
         <div id="footer_navi4" class="footer_href">
-            <a href="./home.html" class="footer_href">
+            <a href="home.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/personal_info.png" alt="导航图4" width=25vh height=25vh>
                 </p>

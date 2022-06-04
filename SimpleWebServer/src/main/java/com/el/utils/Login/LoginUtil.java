@@ -26,7 +26,7 @@ public class LoginUtil {
     //create dataSource
     static {
         try {
-            InputStream in = UserUtil.class.getClassLoader().getResourceAsStream("dbcpconfig_news_table.properties");
+            InputStream in = UserUtil.class.getClassLoader().getResourceAsStream("dbcpconfig_login_table.properties");
             properties = new Properties();
             properties.load(in);
             try {
@@ -82,4 +82,4 @@ public class LoginUtil {
     }
 }
 
-}
+

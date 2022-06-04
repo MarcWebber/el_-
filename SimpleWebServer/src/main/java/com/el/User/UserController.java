@@ -59,10 +59,8 @@ public class UserController {
         ResultSet resultSet= UserDAOUtil.select(id);
         try {
             /*
-             * There's a problem lying here
-             * And I don't know why
-             * it may be solved now
-             * but for what?
+             * theResultSet has a life circle until it is parsed!
+             * the resources should not be released before this method
              *
              */
             resultSet.next();
@@ -78,6 +76,7 @@ public class UserController {
         }catch (SQLException | MalformedURLException e){
             e.printStackTrace();
         } finally {
+            setUserInformationAsJson();
             try {
                 NewsUtil.release(resultSet.getStatement().getConnection(), resultSet.getStatement(),resultSet);
             }catch (SQLException e){
@@ -92,6 +91,9 @@ public class UserController {
      * IF THE BASIC INFO IS CHANGED
      * BUT THE JSON WON'T CHANGE!
      */
+    public List<String> getDepts(){
+        return this.departments;
+    }
 
     public JsonResult setUserInformationAsJson(){
         if (basicInformation!=null){
@@ -118,10 +120,4 @@ public class UserController {
         return null;
     }
     //test
-    public void showInfo(){
-        System.out.println("id"+this.id);
-        System.out.println("name"+this.name);
-        System.out.println("profile"+this.profile);
-        System.out.println("signature"+this.signature);
-    }
 }

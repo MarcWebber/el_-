@@ -11,6 +11,6 @@ import com.el.User.UserController;
 public class TestUser {
     public static void main(String[] args) {
         UserController userController01=new UserController(1);
-        userController01.showInfo();
+//        userController01.showInfo();
     }
 }
