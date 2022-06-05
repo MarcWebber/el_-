@@ -48,3 +48,15 @@ function CreateTableFromInputStream(s, sql_name){
     return tx
 
 }
+
+function GetInfoListFromThisJson(index, json){
+    var this_obj = JSON.parse(json)
+    var ret_map = new Array()
+    ret_map['title'] = this_obj.index.title
+    ret_map['text'] = this_obj.index.summary
+    ret_map['date'] = this_obj.index.daytime
+    ret_map['href'] = this_obj.index.url
+
+    return ret_map
+    
+}

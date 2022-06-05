@@ -57,6 +57,32 @@
     <url-pattern>/NewsServlet</url-pattern>
   </servlet-mapping>
 
+<!--  to get the information of a user and load it-->
+  <servlet>
+    <servlet-name>getUserInfo</servlet-name>
+    <servlet-class>com.el.Servlet.UserServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>getUserInfo</servlet-name>
+    <url-pattern>/setUserInfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>com.el.Servlet.SessionServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/setSession</url-pattern>
+  </servlet-mapping>
+
+<!--  set the auto invalidation time of the session, 15 minutes-->
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+
   <!-- URL space mappings ============================================= -->
 
   <!--

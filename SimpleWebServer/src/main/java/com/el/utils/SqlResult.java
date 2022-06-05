@@ -8,6 +8,7 @@ package com.el.utils;
  * @ Description:
  * Life is short, I use Java
  */
+@Deprecated
 public enum SqlResult {
     query_success,
     query_failure,

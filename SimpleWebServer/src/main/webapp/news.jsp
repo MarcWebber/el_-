@@ -202,7 +202,9 @@
 <script>
     $(function (){
         $(document).ready(function (){
-            $.post("${pageContext.request.contextPath}/")
+            $.post("${pageContext.request.contextPath}/NewsServlet",{deptName:"softwareengineering"},function (data){
+                console.log(data);
+            })
         })
     })
 </script>

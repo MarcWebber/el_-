@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
+    <!-- <meta name="viewport"
     content="width=device-width,user-scalable=0,initial-scale=1.0,
-    minimum-scale=1.0, maximum-scale=1.0">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    minimum-scale=1.0, maximum-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>链接跳转</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
@@ -19,42 +19,42 @@
         // new_alert();
     </script>
 
-    
-<script>
-    function when_clicked(){
-        var href_here = prompt("请输入您想要输入的链接")
-        if (href_here != null){
-            var plus_button = document.getElementById("plus_button")
-            var container = document.getElementById("wrapper")
-            var this_width = container.offsetWidth
-            var left_val = plus_button.offsetLeft
-            console.log(this_width)
-            var top_val = plus_button.offsetTop
-            var new_left_val
-            var new_top_val
-            new_left_val = left_val + 0.32 * this_width
-            console.log(new_left_val)
-            if (new_left_val > 0.8 * this_width){
-                new_left_val = 0
-                new_top_val = top_val + 0.32 * this_width
+
+    <script>
+        function when_clicked(){
+            var href_here = prompt("请输入您想要输入的链接")
+            if (href_here != null){
+                var plus_button = document.getElementById("plus_button")
+                var container = document.getElementById("wrapper")
+                var this_width = container.offsetWidth
+                var left_val = plus_button.offsetLeft
+                console.log(this_width)
+                var top_val = plus_button.offsetTop
+                var new_left_val
+                var new_top_val
+                new_left_val = left_val + 0.32 * this_width
+                console.log(new_left_val)
+                if (new_left_val > 0.8 * this_width){
+                    new_left_val = 0
+                    new_top_val = top_val + 0.32 * this_width
+                }
+                plus_button.style.setProperty('left', new_left_val +'px')
+                plus_button.style.setProperty('top', new_top_val +'px')
+                console.log(plus_button.offsetLeft)
+                var href_board = document.createElement("a")
+                var ele = document.createElement("img" );
+                ele.setAttribute("src", "./resources/images/new_link.jfif")
+                href_board.setAttribute("class", "href_two")
+                ele.setAttribute("class", "img_suit")
+                href_board.setAttribute("href", href_here)
+                href_board.setAttribute("target", "_blank")
+                href_board.style.setProperty("left", left_val + "px")
+                href_board.style.setProperty("top", top_val + "px")
+                href_board.appendChild(ele)
+                container.appendChild(href_board)
             }
-            plus_button.style.setProperty('left', new_left_val +'px')
-            plus_button.style.setProperty('top', new_top_val +'px')
-            console.log(plus_button.offsetLeft)
-            var href_board = document.createElement("a")
-            var ele = document.createElement("img" );
-            ele.setAttribute("src", "./resources/images/new_link.jfif")
-            href_board.setAttribute("class", "href_two")
-            ele.setAttribute("class", "img_suit")
-            href_board.setAttribute("href", href_here)
-            href_board.setAttribute("target", "_blank")
-            href_board.style.setProperty("left", left_val + "px")
-            href_board.style.setProperty("top", top_val + "px")
-            href_board.appendChild(ele)
-            container.appendChild(href_board)
         }
-    }
-</script>
+    </script>
 
     <style>
         *{
@@ -95,6 +95,8 @@
             display: inline-block;
             width: 32%;
             height: auto;
+            color: black;
+            text-align: center;
         }
 
         .href_two{
@@ -109,7 +111,7 @@
             text-decoration: none;
             color: yellow;
         }
-        
+
         .img_place{
             max-width: 100%;
             max-height: 100%;
@@ -142,82 +144,93 @@
             height: auto;
         }
 
+
     </style>
-        <!-- <link rel="stylesheet" href="resources/css/head_style.css"> -->
-        <link rel="stylesheet" href="resources/css/footer_style.css">
+    <!-- <link rel="stylesheet" href="resources/css/head_style.css"> -->
+    <link rel="stylesheet" href="resources/css/footer_style.css">
 </head>
 <body>
-    <div id="header">便捷链接</div>
-    <div id = "wrapper">
-        <a href="https://www.nju.edu.cn/" class="href_one" target="_blank">
-            <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
-        </a>
-        <a href="https://ndwy.nju.edu.cn/" class="href_one" target = "_blank">
-            <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
-        </a>
-        <a href="https://jw.nju.edu.cn" class="href_one" target = "_blank">
-            <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
-        </a>
+<div id="header">便捷链接</div>
+<div id = "wrapper">
+    <a href="https://www.nju.edu.cn/" class="href_one" target="_blank" id="href_1">
+        <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
+        <!-- <p>南京大学官网</p> -->
+    </a>
+    <a href="https://ndwy.nju.edu.cn/" class="href_one" target = "_blank" id="href_2">
+        <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
+        <!-- <p>南京大学五育管理系统</p> -->
+    </a>
+    <a href="https://jw.nju.edu.cn" class="href_one" target = "_blank" id="href_3">
+        <img src="./resources/images/href_logo/nju_logo.jpg" class="img_place">
+        <!-- <p>南京大学本科生院</p> -->
+    </a>
 
-        <img src="./resources/images/get_more_link.png", class="href_two" id="plus_button" onclick="when_clicked()">
+    <img src="./resources/images/get_more_link.png", class="href_two" id="plus_button" onclick="when_clicked()">
 
-        <!-- <a href="#" class="href_one" target = "_blank">
-            空链接
-        </a> -->
-    </div>
-    <footer>
-        <div class="footer-navi">
-            <div id="footer_navi1">
-                <a href="main.jsp" class="footer_href">
-                    <p class="navi_line1">
-                        <img src="./resources/images/activity.png" alt="导航图1" width=25vh height=25vh>
-                    </p>
-                    <p class="navi_line2">
-                        <span class="header-text">主页</span>
-                    </p>
-                </a>
-            </div>
-    
-    
-            <div id="footer_navi2">
-                <a href="news.jsp" class="footer_href">
-                    <p class="navi_line1">
-                        <img src="./resources/images/lecture.png" alt="导航图2" width=25vh height=25vh>
-                    </p>
-                    <p class="navi_line2">
-                        <span class="header-text">新闻</span>
-                    </p>
-                </a>
-            </div>
-    
-            <div id="footer_navi3">
-                <a href="./href.html" class="footer_href">
-                    <p class="navi_line1">
-                        <img src="./resources/images/link.png" alt="导航图3" width=25vh height=25vh>
-                    </p>
-                    <p class="navi_line2">
-                        <span class="header-text">优站</span>
-                    </p>
-                </a>
-            </div>
-    
-            <div id="footer_navi4" class="footer_href">
-                <a href="home.jsp" class="footer_href">
-                    <p class="navi_line1">
-                        <img src="./resources/images/personal_info.png" alt="导航图4" width=25vh height=25vh>
-                    </p>
-                    <p class="navi_line2">
-                        <span class="header-text">我的</span>
-                    </p>
-                </a>
-            </div>
+    <!-- <a href="#" class="href_one" target = "_blank">
+        空链接
+    </a> -->
+</div>
+<footer>
+    <div class="footer-navi">
+        <div id="footer_navi1">
+            <a href="main.jsp" class="footer_href">
+                <p class="navi_line1">
+                    <img src="./resources/images/activity.png" alt="导航图1" width=25vh height=25vh>
+                </p>
+                <p class="navi_line2">
+                    <span class="header-text">主页</span>
+                </p>
+            </a>
         </div>
-    </footer>
+
+
+        <div id="footer_navi2">
+            <a href="news.jsp" class="footer_href">
+                <p class="navi_line1">
+                    <img src="./resources/images/lecture.png" alt="导航图2" width=25vh height=25vh>
+                </p>
+                <p class="navi_line2">
+                    <span class="header-text">新闻</span>
+                </p>
+            </a>
+        </div>
+
+        <div id="footer_navi3">
+            <a href="href.jsp" class="footer_href">
+                <p class="navi_line1">
+                    <img src="./resources/images/link.png" alt="导航图3" width=25vh height=25vh>
+                </p>
+                <p class="navi_line2">
+                    <span class="header-text">优站</span>
+                </p>
+            </a>
+        </div>
+
+        <div id="footer_navi4" class="footer_href">
+            <a href="home.jsp" class="footer_href">
+                <p class="navi_line1">
+                    <img src="./resources/images/personal_info.png" alt="导航图4" width=25vh height=25vh>
+                </p>
+                <p class="navi_line2">
+                    <span class="header-text">我的</span>
+                </p>
+            </a>
+        </div>
+    </div>
+</footer>
 </body>
 
 <script>
+    var GetUpButton = document.getElementById('href_1')
+    var top_plus = GetUpButton.offsetHeight
     var GetPlusButton = document.getElementById("plus_button")
     GetPlusButton.style.setProperty('left', 0 + 'px')
-    GetPlusButton.style.setProperty('top', (0.32 * window_width) + 'px')
+    GetPlusButton.style.setProperty('top', top_plus + 'px')
+    // for (let i = 1; i <= 3; i++){
+    //     let button_here = document.getElementById("href_" + i)
+    //     button_here.style.setProperty('position', 'absolute')
+    //     button_here.style.setProperty('top', 5 + 'vh')
+    // }
 </script>
 </html>

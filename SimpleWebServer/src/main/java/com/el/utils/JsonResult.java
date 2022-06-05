@@ -8,6 +8,7 @@ package com.el.utils;
  * @ Description:
  * Life is short, I use Java
  */
+
 public enum JsonResult {
     GetFailed,
     GetSuccess,

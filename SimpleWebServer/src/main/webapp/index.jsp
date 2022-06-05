@@ -31,9 +31,9 @@
     <h2>用户登录</h2>
     <span class="login_box" id="pic"></span>
     <!--    以post方式提交表单，提交到login    -->
-    <form id="loginform" method="get" action="${pageContext.request.contextPath}/login" onsubmit="return encrypt();">
+    <form id="loginform" method="post" action="${pageContext.request.contextPath}/login" onsubmit="return encrypt();">
         <div class="login_box">
-            <input type="text" name='name' id='name' value="^(*￣(oo)￣)^"
+            <input type="text" name='name' id='name' value="21125"
                    placeholder="请输入用户名"/>
             <label for="name"></label>
         </div>

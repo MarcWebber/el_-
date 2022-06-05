@@ -33,9 +33,7 @@ public class NewsDAOUtil implements DAO {
             connection=NewsUtil.getConnection();
             preparedStatement=connection.prepareStatement(sql);
             /*
-             * Aghhhh!!!!
              * I close the ResultSet personally
-             * SHITTTTTT!!!!!
              * But the connection won't close I think?
              * Will this lead to bugs?
              */

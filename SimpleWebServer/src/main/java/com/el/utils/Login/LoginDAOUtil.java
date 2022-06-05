@@ -36,15 +36,16 @@ public class LoginDAOUtil {
             resultSet=preparedStatement.executeQuery();
             resultSet.next();
 //            System.out.println(preparedStatement.executeQuery().getObject(0));
-            return resultSet.getInt(1);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }finally {
+            int i=resultSet.getInt(1);
             try {
                 LoginUtil.release(resultSet.getStatement().getConnection(), resultSet.getStatement(),resultSet);
             }catch (SQLException e){
                 e.printStackTrace();
             }
+            return i;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
         }
         return 0;
     }

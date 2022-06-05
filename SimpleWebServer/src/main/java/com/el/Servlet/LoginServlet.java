@@ -22,18 +22,26 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        req.getRequestDispatcher("/r/index.jsp").forward(req,resp);
-        doLoginIn(Integer.parseInt(req.getParameter("name")),req.getParameter("pwd"),resp);
+        doLoginIn(Integer.parseInt(req.getParameter("name")),req.getParameter("pwd"),req,resp);
     }
 
-    protected void doLoginIn(int Id, String password, HttpServletResponse resp) {
+    protected void doLoginIn(int Id, String password, HttpServletRequest req,HttpServletResponse resp) {
         try {
             if (new LoginController(Id, password).check()) {
-                resp.getWriter().print(true);
+//                resp.getWriter().print(true);
                 Initializer.init(Id);
-                System.out.println(Id);
-                resp.sendRedirect("main.jsp");
+//                System.out.println(Id);
+                req.setAttribute("Id",Id);
+//                System.out.println("Id= "+Id);
+                try {
+                    req.getRequestDispatcher("/setSession").forward(req,resp);
+                }catch (ServletException e){
+                    e.printStackTrace();
+                    resp.setStatus(404);
+                    resp.sendRedirect("index.jsp");
+                }
             } else {
-                resp.getWriter().print(false);
+//                resp.getWriter().print(false);
                 resp.sendRedirect("index.jsp");
             }
         } catch (IOException e) {
@@ -45,4 +53,6 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
     }
+
+
 }

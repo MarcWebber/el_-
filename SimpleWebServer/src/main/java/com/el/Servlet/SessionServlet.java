@@ -1,42 +1,32 @@
 package com.el.Servlet;
 
-import com.alibaba.fastjson.JSONObject;
-import com.el.CareTaker.NewsCareTaker;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created with Intellij IDEA
  *
  * @ Author: MarcWebber
- * @ Date: 2022/6/1
+ * @ Date: 2022/6/5
  * @ Description:
  * Life is short, I use Java
  */
-@WebServlet(name = "NewsServlet", value = "/NewsServlet")
-public class NewsServlet extends HttpServlet {
+public class SessionServlet extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doGet(req, resp);
-    }
-    /*
-     * @BUG!!!!
-     *
-     */
-
-    public List<JSONObject> getNews(String deptName) {
-        return NewsCareTaker.newsControllerMap.get(deptName).getNewsJSON();
+        int Id=Integer.parseInt(req.getAttribute("Id").toString());
+        System.out.println(Id);
+        req.getSession().setAttribute("Id",Id);
+        resp.sendRedirect("main.jsp");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().print(getNews(req.getParameter("deptName")));
-        System.out.println(getNews("softwareengineering"));
+        this.doGet(req, resp);
     }
 }

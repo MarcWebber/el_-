@@ -54,7 +54,7 @@
         </div>
 
         <div id="navi2">
-            <a href="./lecture.html" class="header_href">
+            <a href="./lecture.jsp" class="header_href">
                 <p class="navi_line1">
                     <img src="resources/images/lecture.png" width="25vh" height="25vh" alt="导航图2">
                 </p>

@@ -15,7 +15,6 @@ public class testNews {
         for (int i=0;i<100;i++){
             NewsController newsController=new NewsController("softwareengineering");
             newsController.showInfo();
-
         }
 
     }

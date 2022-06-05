@@ -25,7 +25,7 @@ import java.util.List;
 public class NewsController {
     private final String deptName;
     private final List<List<String>> newsLists ;
-    private JSONObject newsJSON;
+    private List<JSONObject> newsJSON;
     public NewsController(String deptName){
         /*
          * @BUG!!!!
@@ -73,14 +73,16 @@ public class NewsController {
     // it shouldn't be set again and again
     private JsonResult setInformationAsJson(){
         if (this.newsJSON==null){
-            this.newsJSON=new JSONObject();
+            this.newsJSON=new ArrayList<>();
         }
         for (List<String> listList:newsLists){
-            newsJSON.put("NEWS_TITLE",listList.get(0));
-            newsJSON.put("NEWS_ABSTRACT",listList.get(1));
-            newsJSON.put("NEWS_DATE",listList.get(2));
-            newsJSON.put("NEWS_URL",listList.get(3));
-
+            JSONObject jo=new JSONObject();
+            System.out.println("123345667");
+            jo.put("NEWS_TITLE",listList.get(0));
+            jo.put("NEWS_ABSTRACT",listList.get(1));
+            jo.put("NEWS_DATE",listList.get(2));
+            jo.put("NEWS_URL",listList.get(3));
+            newsJSON.add(jo);
         }
         return JsonResult.SetSuccess;
     }
@@ -90,7 +92,7 @@ public class NewsController {
         return dateFormat.format(date);
     }
 
-    public JSONObject getNewsJSON(){
+    public List<JSONObject> getNewsJSON(){
         return this.newsJSON;
     }
 
