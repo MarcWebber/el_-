@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8"/>
@@ -58,6 +58,7 @@
 <script>
     'use strict'
     var login_box = document.getElementsByClassName("login");
+    var url=getPath();
     if (window.innerWidth > 400) {
         login_box[0].clientWidth = 320;
     }
@@ -69,6 +70,13 @@
         console.log(pwd)
         // $("#loginform").submit();
         return true;
+    }
+    function getPath(){
+        let pathName = document.location.pathname;
+        let index = pathName.substr(1).indexOf("/");
+        let result = pathName.substr(0,login+1);
+        alert(result);
+        return result;
     }
 </script>
 </body>

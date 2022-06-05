@@ -26,13 +26,13 @@ public class LoginDAOUtil {
             preparedStatement=connection.prepareStatement(sql);
             preparedStatement.setInt(1,Id);
             preparedStatement.setString(2,password);
-            System.out.println(Id);
-            System.out.println(password);
+//            System.out.println(Id);
+//            System.out.println(password);
             /*
              * @BUG!!!!
              *
              */
-            System.out.println(sql);
+//            System.out.println(sql);
             resultSet=preparedStatement.executeQuery();
             resultSet.next();
 //            System.out.println(preparedStatement.executeQuery().getObject(0));

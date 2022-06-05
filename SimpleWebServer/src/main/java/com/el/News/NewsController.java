@@ -77,7 +77,7 @@ public class NewsController {
         }
         for (List<String> listList:newsLists){
             JSONObject jo=new JSONObject();
-            System.out.println("123345667");
+//            System.out.println("123345667");
             jo.put("NEWS_TITLE",listList.get(0));
             jo.put("NEWS_ABSTRACT",listList.get(1));
             jo.put("NEWS_DATE",listList.get(2));

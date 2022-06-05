@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.el.utils.JsonResult;
 import com.el.utils.News.NewsUtil;
 import com.el.utils.User.UserDAOUtil;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -64,6 +63,7 @@ public class UserController {
              * the resources should not be released before this method
              *
              */
+            System.out.println("trying to set the basic info of "+id);
             resultSet.next();
             this.id=resultSet.getInt("id");
 //            resultSet.next();
@@ -74,10 +74,10 @@ public class UserController {
             this.signature=resultSet.getString("signature");
 //            resultSet.next();
             this.departments= Arrays.asList(resultSet.getString("departments").split(" "));
+            setUserInformationAsJson();
         }catch (SQLException | MalformedURLException e){
             e.printStackTrace();
         } finally {
-            setUserInformationAsJson();
             try {
                 NewsUtil.release(resultSet.getStatement().getConnection(), resultSet.getStatement(),resultSet);
             }catch (SQLException e){
@@ -97,28 +97,18 @@ public class UserController {
     }
 
     public JsonResult setUserInformationAsJson(){
-        if (basicInformation!=null){
-            return JsonResult.AlreadySet;
-        }else {
             this.basicInformation=new JSONObject();
             this.basicInformation.put("id",this.id);
             this.basicInformation.put("name",this.name);
             this.basicInformation.put("profile",this.profile);
             this.basicInformation.put("signature",this.signature);
             this.basicInformation.put("departments",this.departments);
-        }
+            System.out.println("trying to set Json for "+id);
         return JsonResult.SetSuccess;
     }
 
-    public JSON getUserInformationAsJson(){
-        if (this.basicInformation!=null){
-            return this.basicInformation;
-        }else {
-            if (setUserInformationAsJson()==JsonResult.SetSuccess){
-                return this.basicInformation;
-            }
-        }
-        return null;
+    public JSONObject getUserInformationAsJson(){
+        return this.basicInformation;
     }
     //test
 }

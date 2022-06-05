@@ -21,7 +21,6 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        req.getRequestDispatcher("/r/index.jsp").forward(req,resp);
         doLoginIn(Integer.parseInt(req.getParameter("name")),req.getParameter("pwd"),req,resp);
     }
 
@@ -34,6 +33,7 @@ public class LoginServlet extends HttpServlet {
                 req.setAttribute("Id",Id);
 //                System.out.println("Id= "+Id);
                 try {
+                    System.out.println("Login in success!");
                     req.getRequestDispatcher("/setSession").forward(req,resp);
                 }catch (ServletException e){
                     e.printStackTrace();

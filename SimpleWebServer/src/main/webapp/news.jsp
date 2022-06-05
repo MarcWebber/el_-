@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,7 +110,7 @@
 
 
         <div id="footer_navi2">
-            <a href="./news.html" class="footer_href">
+            <a href="news.jsp" class="footer_href">
                 <p class="navi_line1">
                     <img src="./resources/images/lecture.png" alt="导航图2" width=25vh height=25vh>
                 </p>
@@ -153,57 +153,125 @@
 <script src="./resources/scripts/render_content.js"></script>
 
 <script>
-    function CreateList(){
-        for (let i = 0;  i < 12; i++){
-            AppendHrefToContainer(i, "href_list", "title_list", "text_list", "date_list")
-        }
-    }
-    
-    function ResetList(){
-        for (let i = 0; i < 12; i++){
-            SetTitleFromNewsSQL(("title_list" + i), i)
-            SetHrefFromNewsSQL(("href_list" + i), i)
-            SetDateFromNewsSQL(("date_list" + i), i)
-        }
-    }
-    RecreateNewsTable()
-    CreateList()
-    ResetList()
-    var _element = document.getElementById('container'),   
-    OriginalPos = _element.offsetTop,  // 初始的值  
-    Container_height = _element.offsetHeight + OriginalPos; 
-    var is_touching = false
-
-    _element.addEventListener("touchstart", function(e){
-        let touch_pl = e.touches[0].pageY;
-        if (touch_pl > OriginalPos && touch_pl < OriginalPos + Container_height){
-           is_touching = true // 记录差值
-       }
-    }, false);
-
-    _element.addEventListener('touchmove', function(e) {  
-    // e.touches[0].pageY 当前位置  
-       let touch_pl = e.touches[0].pageY;
-       if (is_touching){
-           _element.style.setProperty("top", touch_pl) // 记录差值
-       }
-           
-    }, false);
-
-    _element.addEventListener('touchend', function(e) {  
-        _element.style.setProperty("top", OriginalPos)
-        RecreateNewsTable()
-        ResetList()
-
-        is_touching = false
-    }, false);
+    // function CreateList(){
+    //     for (let i = 0;  i < 12; i++){
+    //         AppendHrefToContainer(i, "href_list", "title_list", "text_list", "date_list")
+    //     }
+    // }
+    //
+    // function ResetList(){
+    //     for (let i = 0; i < 12; i++){
+    //         SetTitleFromNewsSQL(("title_list" + i), i)
+    //         SetHrefFromNewsSQL(("href_list" + i), i)
+    //         SetDateFromNewsSQL(("date_list" + i), i)
+    //     }
+    // }
+    // RecreateNewsTable()
+    // CreateList()
+    // ResetList()
+    // var _element = document.getElementById('container'),
+    // OriginalPos = _element.offsetTop,  // 初始的值
+    // Container_height = _element.offsetHeight + OriginalPos;
+    // var is_touching = false
+    //
+    // _element.addEventListener("touchstart", function(e){
+    //     let touch_pl = e.touches[0].pageY;
+    //     if (touch_pl > OriginalPos && touch_pl < OriginalPos + Container_height){
+    //        is_touching = true // 记录差值
+    //    }
+    // }, false);
+    //
+    // _element.addEventListener('touchmove', function(e) {
+    // // e.touches[0].pageY 当前位置
+    //    let touch_pl = e.touches[0].pageY;
+    //    if (is_touching){
+    //        _element.style.setProperty("top", touch_pl) // 记录差值
+    //    }
+    //
+    // }, false);
+    //
+    // _element.addEventListener('touchend', function(e) {
+    //     _element.style.setProperty("top", OriginalPos)
+    //     RecreateNewsTable()
+    //     ResetList()
+    //
+    //     is_touching = false
+    // }, false);
 </script>
 
 <script>
     $(function (){
         $(document).ready(function (){
             $.post("${pageContext.request.contextPath}/NewsServlet",{deptName:"softwareengineering"},function (data){
-                console.log(data);
+                function CreateList(){
+                    /*
+                     * @BUG!!!!
+                     *
+                     */
+
+                    // console.log(data.size);
+                    for (let i = 0;  i < 8; i++){
+                        AppendHrefToContainer(i, "href_list", "title_list", "text_list", "date_list")
+                    }
+                }
+                // function ResetList(){
+                //         for (let i = 0; i < 12; i++){
+                //             SetTitleFromNewsSQL(("title_list" + i), i)
+                //             SetHrefFromNewsSQL(("href_list" + i), i)
+                //             SetDateFromNewsSQL(("date_list" + i), i)
+                //         }
+                //     }
+                function ResetList(){
+                    let news=JSON.parse(data);
+                    let hrefs=$('.pure_link');
+                    let titles=$('.new_title');
+                    let texts=$('.new_text');
+                    let times=$('.new_time');
+                    for (let i = 0; i < 8; i++){
+                        // console.log(news[i]);
+                        let re=news[i];
+                        // console.log(re);
+                        // console.log(re.NEWS_ABSTRACT);
+                        // console.log(re.NEWS_URL);
+                        hrefs[i].setAttribute("href",re.NEWS_URL);
+                        titles[i].innerText=re.NEWS_TITLE;
+                        texts[i].innerText=re.NEWS_ABSTRACT;
+                        times[i].innerText=re.NEWS_DATE;
+                        // console.log(hrefs[i].text);
+                        // console.log(texts[i].text);
+                    }
+                }
+                // RecreateNewsTable()
+                CreateList()
+                ResetList()
+                var _element = document.getElementById('container'),
+                    OriginalPos = _element.offsetTop,  // 初始的值
+                    Container_height = _element.offsetHeight + OriginalPos;
+                var is_touching = false
+
+                _element.addEventListener("touchstart", function(e){
+                    let touch_pl = e.touches[0].pageY;
+                    if (touch_pl > OriginalPos && touch_pl < OriginalPos + Container_height){
+                        is_touching = true // 记录差值
+                    }
+                }, false);
+
+                _element.addEventListener('touchmove', function(e) {
+                    // e.touches[0].pageY 当前位置
+                    let touch_pl = e.touches[0].pageY;
+                    if (is_touching){
+                        _element.style.setProperty("top", touch_pl) // 记录差值
+                    }
+
+                }, false);
+
+                _element.addEventListener('touchend', function(e) {
+                    _element.style.setProperty("top", OriginalPos)
+                    RecreateNewsTable()
+                    ResetList()
+
+                    is_touching = false
+                }, false);
             })
         })
     })

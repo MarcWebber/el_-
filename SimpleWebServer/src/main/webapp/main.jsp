@@ -113,7 +113,7 @@
         <div class="section_top">
             <div class="section_ui">ui
             </div>
-            <div class="section_text" onclick="window.location.href='activity.html'; ">活动速览
+            <div class="section_text" onclick="window.location.href='activity.jsp'; ">活动速览
             </div>
             <div class="section_extra">最新活动早知道
             </div>
@@ -147,7 +147,7 @@
             <div class="section_ui">ui
 <!--                <img src="resources/images/讲座.png" alt="123">-->
             </div>
-            <div class="section_text" onclick="window.location.href='lecture.html'; ">讲座信息
+            <div class="section_text" onclick="window.location.href='lecture.jsp'; ">讲座信息
             </div>
             <div class="section_extra">哪些大牛在开讲
             </div>

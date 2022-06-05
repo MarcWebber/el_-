@@ -20,8 +20,8 @@ public class SessionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int Id=Integer.parseInt(req.getAttribute("Id").toString());
-        System.out.println(Id);
         req.getSession().setAttribute("Id",Id);
+        System.out.println("Created a user, UserId="+Id);
         resp.sendRedirect("main.jsp");
     }
 

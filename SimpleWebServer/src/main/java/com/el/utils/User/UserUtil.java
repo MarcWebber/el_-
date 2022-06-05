@@ -46,6 +46,7 @@ public class UserUtil {
         Connection connection = null;
         try {
             connection = dataSource.getConnection();
+            System.err.println("getConnection!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -83,6 +84,7 @@ public class UserUtil {
                 e.printStackTrace();
             }
         }
+        System.out.println("released!");
     }
 }
 

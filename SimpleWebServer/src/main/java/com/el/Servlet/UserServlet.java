@@ -23,7 +23,8 @@ public class UserServlet extends HttpServlet {
     // it may be now deprecated
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().print(UserCareTaker.getUser(Integer.parseInt(req.getParameter("Id"))));
+        System.out.println(req.getSession().getAttribute("Id").toString()+"is trying to get info");
+        resp.getWriter().print(UserCareTaker.getUser(Integer.parseInt(req.getSession().getAttribute("Id").toString())).getUserInformationAsJson());
     }
 
     @Override

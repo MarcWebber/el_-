@@ -1,4 +1,4 @@
-<<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,18 +19,119 @@
     <link rel="stylesheet" href="resources/css/section_style.css">
     <link rel="stylesheet" href="resources/css/homepg_style.css">
     <title>主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .infoline {
+            /* border: 1px solid black; */
+            position: relative;
+            height: 15vh;
+            width: 100vw;
+            background-color: white;
+        }
+
+        .sminfoline {
+            position: relative;
+            height: 5vh;
+            width: 100vw;
+            background-color: white;
+        }
+
+        .pixmap {
+            /* 头像框 */
+            position: absolute;
+            height: 15vh;
+            width: 30vw;
+            left: 0;
+            top: 0;
+        }
+
+        .img {
+            /* 图片居中显示 */
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 75%;
+            width: auto;
+        }
+
+        .name {
+            /* 头像框右侧栏 */
+            position: absolute;
+            height: 10vh;
+            width: 60vw;
+            left: 30vw;
+            top: 0;
+            padding: 5vw;
+        }
+
+        .voidline {
+            /* 空行 */
+            position: relative;
+            height: 2vh;
+            width: 100vw;
+        }
+
+        .normalline {
+            position: relative;
+            height: 5vh;
+            line-height: 5vh;
+        }
+
+        .smallpix {
+            position: absolute;
+            height: 5vh;
+            width: 20vw;
+            top: 0;
+            left: 0;
+        }
+
+        .smallpix2 {
+            position: absolute;
+            height: 5vh;
+            top: 0;
+            left: 20vw;
+        }
+
+        .specialpix {
+            position: absolute;
+            height: 9vh;
+            width: 9vh;
+            z-index: 10;
+            top: 3vh;
+            right: 5vw;
+        }
+        #username{
+            display: flex;
+            transform: translateY(10%);
+            font-family: "Arial","楷体";
+            size: auto;
+        }
+
+        #userinfo{
+            display: flex;
+            transform: translateY(-4vh);
+            font-family: "Arial","楷体";
+            size: auto;
+        }
+
+    </style>
 </head>
 
 <body class="el-main-page" bgcolor="WhiteSmoke">
 <!-- 个人信息栏 -->
 <div class="infoline">
     <div class="pixmap">
-        <img class="img" src="./resources/images/plus.png" alt="用户照片">
+        <img class="img" id="user_img" src="" alt="用户照片">
     </div>
     <div class="name">
-        <b><font size="5">用户名字</font></b>
+        <b><span id="username" style="font-size: medium; "></span></b>
         <br><br>
-        <p><font size="2">用户介绍用户介绍用户介绍</font></p>
+        <p><span id="userinfo" style="font-size: x-small; "></span></p>
     </div>
 </div>
 <div class="voidline"></div>
@@ -131,13 +232,18 @@
 </html>
 
 </html>
-<%--the script is to load the information needed--%>
 <script>
-    <%--$(function (){--%>
-    <%--    $(document).ready(function (){--%>
-    <%--        $.get("${pageContext.request.contextPath}/UserServlet",{Id:},function (data){--%>
-    <%--            console.log(data);--%>
-    <%--        })--%>
-    <%--    })--%>
-    <%--})--%>
+    $(function () {
+        $.get("${pageContext.request.contextPath}/UserServlet", function (data) {
+                // console.log(data);
+                let result = JSON.parse(data);
+                console.log(result);
+                $("#username").text(result.name);
+                $('#userinfo').text(result.signature);
+                <%--alert("${pageContext.request.contextPath}");--%>
+                document.getElementById('user_img').src=(result.profile);
+                console.log(document.getElementById('user_img').src);
+            }
+        )
+    })
 </script>

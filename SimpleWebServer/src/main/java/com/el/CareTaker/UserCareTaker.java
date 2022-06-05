@@ -26,6 +26,7 @@ public class UserCareTaker {
             return false;
         }else {
            userControllerMap.put(Id,new UserController(Id));
+           System.out.println("user "+Id+" is created!");
         }
         return true;
     }

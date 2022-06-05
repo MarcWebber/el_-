@@ -14,7 +14,8 @@ public class testNews {
     public static void main(String[] args) {
         for (int i=0;i<100;i++){
             NewsController newsController=new NewsController("softwareengineering");
-            newsController.showInfo();
+            System.out.println(i);
+//            newsController.showInfo();
         }
 
     }

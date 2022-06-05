@@ -47,16 +47,17 @@ public class LoginUtil {
         Connection connection = null;
         try {
             connection = dataSource.getConnection();
+            System.err.println("getConncetion!");
+            try {
+                connection.setAutoCommit(false);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         // to start a transmission
-        try {
-            assert connection != null;
-            connection.setAutoCommit(false);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
         return connection;
     }
 
@@ -82,6 +83,7 @@ public class LoginUtil {
                 e.printStackTrace();
             }
         }
+        System.out.println("released!");
     }
 }
 

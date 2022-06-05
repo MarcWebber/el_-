@@ -5,10 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e3b3629-0125-440a-b6f2-545fe9b6169b" name="Changes" comment="添加了一个中期报告模板">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/constant_present.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/constant_present.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimpleWebServer/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Servlet/SessionServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Servlet/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/test/Insert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/images/config.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/images/heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/images/user_picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/CareTaker/NewsCareTaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/CareTaker/NewsCareTaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/CareTaker/UserCareTaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/CareTaker/UserCareTaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/News/LectureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/News/LectureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/News/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/News/NewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Servlet/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Servlet/Initializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Servlet/NewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/Servlet/NewsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/User/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/JsonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/JsonResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/Login/LoginDAOUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/Login/LoginDAOUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/Login/LoginUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/Login/LoginUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/News/NewsDAOUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/News/NewsDAOUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/SqlResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/SqlResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/User/UserDAOUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/User/UserDAOUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/User/UserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/java/com/el/utils/User/UserUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/resources/dbcpconfig_login_table.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/resources/dbcpconfig_login_table.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/test/TestUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/test/testNews.java" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/test/testNews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/activity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/activity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/head_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/header_script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/href.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/href.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/lecture.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/lecture.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/news.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/news.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/css/constant_present.css" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/css/constant_present.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/css/head_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/css/head_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/css/homepg_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/css/homepg_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/scripts/SQLGetAndSert.js" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleWebServer/src/main/webapp/resources/scripts/SQLGetAndSert.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +100,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/study/Grade1.2/SimpleWebServer",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/study/Grade1.2/SimpleWebServer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\study\Grade1.2\EL\resources\images" />
@@ -114,6 +150,7 @@
       <workItem from="1651763527313" duration="26000" />
       <workItem from="1654397531719" duration="1072000" />
       <workItem from="1654398799584" duration="1393000" />
+      <workItem from="1654404973911" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="初步完成轮播图，极其丑，一堆BUG存在&#10;图片目前不是动态获取的，但是动态添加的，后续可以修改，注释掉了一堆代码。&#10;轮播图点击事件还没有绑定。&#10;长宽比也和鬼一样。&#10;总之是一段很臭的代码，我过段时间重构一下代码。">
       <created>1651043908380</created>

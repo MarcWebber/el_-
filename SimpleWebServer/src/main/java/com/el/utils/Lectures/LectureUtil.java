@@ -1,6 +1,5 @@
-package com.el.utils.News;
+package com.el.utils.Lectures;
 
-import com.el.utils.DAO;
 import com.el.utils.User.UserUtil;
 import org.apache.commons.dbcp.BasicDataSourceFactory;
 
@@ -17,17 +16,17 @@ import java.util.Properties;
  * Created with Intellij IDEA
  *
  * @ Author: MarcWebber
- * @ Date: 2022/6/1
+ * @ Date: 2022/6/5
  * @ Description:
  * Life is short, I use Java
  */
-public class NewsUtil {
+public class LectureUtil {
     private static Properties properties;
     private static DataSource dataSource;
     //create dataSource
     static {
         try {
-            InputStream in = UserUtil.class.getClassLoader().getResourceAsStream("dbcpconfig_news_table.properties");
+            InputStream in = UserUtil.class.getClassLoader().getResourceAsStream("dbcpconfig_lecture_table.properties");
             properties = new Properties();
             properties.load(in);
             try {
@@ -81,3 +80,4 @@ public class NewsUtil {
         System.out.println("released!");
     }
 }
+
